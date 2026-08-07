@@ -347,32 +347,97 @@
 </button>
 </div>
 </nav>
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-black">
-<div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center object-cover transform scale-105 transition-transform duration-[20s] ease-out hover:scale-110" data-alt="A sweeping 4K cinematic view of a majestic destination wedding setup on a cliffside overlooking the ocean." style="background-image: url('https://images.unsplash.com/photo-1545232979-fbfd4360976d?q=80&w=2560&auto=format&fit=crop');"></div>
-<!-- High contrast dark gradient overlay -->
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-</div>
-<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col items-center justify-center">
-<span class="inline-block font-label-sm text-xs md:text-sm text-amber-200 uppercase tracking-[0.3em] px-5 py-2 rounded-full border border-amber-200/40 bg-black/40 backdrop-blur-md mb-6 shadow-lg">Editorial Floristry &amp; Design</span>
-<h1 class="font-display-lg text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-serif tracking-tight mb-6 drop-shadow-2xl leading-tight">The Wildest Love</h1>
-<p class="font-body-lg text-base sm:text-lg md:text-2xl text-white/95 max-w-2xl mx-auto mb-10 drop-shadow-lg font-normal leading-relaxed">Curating untamed floral beauty and classical elegance for life's most extraordinary celebrations.</p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
-<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-label-sm text-sm uppercase tracking-widest hover:bg-amber-300 hover:text-black transition-all duration-300 shadow-xl hover:scale-105 font-semibold" href="#explore">
-                    Discover Our Approach
-</a>
-<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-black/40 border border-white/80 text-white font-label-sm text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 shadow-xl hover:scale-105 backdrop-blur-md font-semibold" href="booking.html">
-                    Book Consultation
-</a>
-</div>
-</div>
-<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-<a class="text-white/80 hover:text-white transition-colors" href="#explore" title="Scroll Down">
-<span class="material-symbols-outlined text-4xl drop-shadow-md">expand_more</span>
-</a>
-</div>
+<!-- Hero Section - Split Screen Editorial -->
+<section class="relative min-h-screen flex overflow-hidden bg-background" id="home2-hero">
+  <!-- Left Panel: Content -->
+  <div class="relative z-10 flex flex-col justify-center w-full lg:w-1/2 px-margin-mobile md:px-16 lg:px-20 xl:px-24 py-24 pt-32">
+    <!-- Decorative vertical line -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 h-48 w-px bg-primary/20 hidden xl:block"></div>
+    <!-- Issue number / kicker -->
+    <div class="flex items-center gap-4 mb-8 fade-in-up">
+      <div class="h-px w-12 bg-primary"></div>
+      <span class="font-label-sm text-xs text-primary uppercase tracking-[0.35em]">Refinement .03 — Floréa Studio</span>
+    </div>
+    <!-- Main headline -->
+    <h1 class="font-display-lg text-on-background mb-6 fade-in-up leading-[0.92] tracking-tight" style="font-size: clamp(3.5rem, 8vw, 7rem); transition-delay: 0.1s;">
+      Where<br/>
+      <span class="italic text-primary" style="font-size: clamp(4rem, 9vw, 8rem);">Bloom</span><br/>
+      Becomes<br/>
+      <em class="not-italic font-serif">Art</em>
+    </h1>
+    <!-- Subheadline -->
+    <p class="font-body-lg text-on-surface-variant max-w-sm mb-10 leading-relaxed fade-in-up" style="transition-delay: 0.2s;">
+      An editorial-first approach to floristry. We sculpt organic narratives that are felt as much as seen — for weddings, galas, and moments that deserve forever.
+    </p>
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-16 fade-in-up" style="transition-delay: 0.3s;">
+      <a href="gallery.html" class="group inline-flex items-center gap-3 bg-primary text-on-primary font-label-sm text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-primary-container hover:text-on-primary-container transition-all duration-300">
+        View Our Work
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+      <a href="booking.html" class="inline-flex items-center gap-3 border border-primary/40 text-primary font-label-sm text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-primary/5 transition-all duration-300">
+        Begin Consultation
+      </a>
+    </div>
+    <!-- Stats row -->
+    <div class="flex gap-8 pt-8 border-t border-primary/15 fade-in-up" style="transition-delay: 0.4s;">
+      <div>
+        <div class="font-display-lg text-3xl text-primary mb-1">12+</div>
+        <div class="font-label-sm text-xs text-on-surface-variant uppercase tracking-widest">Years Studio</div>
+      </div>
+      <div class="w-px bg-primary/15"></div>
+      <div>
+        <div class="font-display-lg text-3xl text-primary mb-1">400+</div>
+        <div class="font-label-sm text-xs text-on-surface-variant uppercase tracking-widest">Weddings</div>
+      </div>
+      <div class="w-px bg-primary/15"></div>
+      <div>
+        <div class="font-display-lg text-3xl text-primary mb-1">8</div>
+        <div class="font-label-sm text-xs text-on-surface-variant uppercase tracking-widest">Awards</div>
+      </div>
+    </div>
+  </div>
+  <!-- Right Panel: Image Composition -->
+  <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+    <!-- Background tint -->
+    <div class="absolute inset-0 bg-surface-container-low"></div>
+    <!-- Main large image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img
+        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1800&auto=format&fit=crop"
+        alt="Grand wedding floral arch editorial"
+        class="w-full h-full object-cover"
+        style="object-position: center 30%;"
+      />
+      <!-- Subtle dark vignette on left edge for blend -->
+      <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+    </div>
+    <!-- Floating card overlay — bottom left -->
+    <div class="absolute bottom-10 left-8 z-20 bg-background/90 backdrop-blur-md border border-primary/20 px-6 py-5 max-w-[220px] shadow-xl">
+      <div class="font-label-sm text-xs text-primary uppercase tracking-widest mb-1">Currently Featured</div>
+      <div class="font-headline-md text-on-surface text-lg leading-tight">The Ophelia Collection</div>
+      <div class="h-px w-8 bg-primary mt-3"></div>
+    </div>
+    <!-- Floating accent image — top right -->
+    <div class="absolute top-10 right-10 z-20 w-32 h-40 overflow-hidden border-2 border-background shadow-2xl">
+      <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVT9pIYm8_tfBKV19VpJdwSKUZKtWnDFzUX1H_z9OL8vlDfS0Wjst6w7evE3XDpn5UAzLaLrH_rSDUFpHa73_CUhHu3ukYSrBBoZjeGCumMfzRg0pEY7ZVEBwsUAB5xjNVltn1am9q0RclhxPdBrPBSznk0s8TwIhbIpX1sOJhewHMc6GNmbdK6N4Ot84UjrYWc9Jwzue5Z-Yu7IM9CFKMglpRIXsChLepaXvp_UN6Z6ENCOzIjVMT"
+        alt="Intimate tablescape floral detail"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- Vertical text label -->
+    <div class="absolute right-4 top-1/2 -translate-y-1/2 z-20 rotate-90 origin-center">
+      <span class="font-label-sm text-xs text-white/60 uppercase tracking-[0.4em]">Est. 2012 · New York</span>
+    </div>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 lg:left-[25%] -translate-x-1/2 z-30 flex flex-col items-center gap-2 animate-bounce">
+    <span class="font-label-sm text-xs text-on-surface-variant uppercase tracking-widest">Scroll</span>
+    <span class="material-symbols-outlined text-primary text-xl">expand_more</span>
+  </div>
 </section>
+
 <!-- Section 1: The Art of Floral Design -->
 <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="explore">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
