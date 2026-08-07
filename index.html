@@ -424,11 +424,11 @@
 <p class="text-on-surface-variant">Highlighting the most exquisite blooms currently in season.</p>
 </div>
 <div class="mt-4 md:mt-0 flex space-x-2">
-<button class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
-<button class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary-container transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+<button id="seasonal-prev" aria-label="Previous Season" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary active:scale-95 transition-all cursor-pointer"><span class="material-symbols-outlined">arrow_back</span></button>
+<button id="seasonal-next" aria-label="Next Season" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary active:scale-95 transition-all cursor-pointer"><span class="material-symbols-outlined">arrow_forward</span></button>
 </div>
 </div>
-<div class="flex space-x-6 overflow-x-auto no-scrollbar pb-8 reveal delay-100">
+<div id="seasonal-slider" class="flex space-x-6 overflow-x-auto no-scrollbar pb-8 reveal delay-100 scroll-smooth">
 <!-- Item 1 -->
 <div class="min-w-[280px] md:min-w-[350px] group cursor-pointer">
 <div class="aspect-[4/5] bg-cover bg-center mb-4 overflow-hidden" data-alt="Spring Peonies" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNOFxIrtfldShXCBkXuqNXRwjK5TiwY1m1rmYa_GddxuQVPGM1d3pJRJn_JtncI3X751RI8ZCaaqm1Od_8YycdLLCQbFug7O84pxv8mDUMcEaSnT_AnKZIQngNgVr4oFVKvMLIRtRSY6w0QO8JxiN58Ku0pmp7g1W0JrVC-rNsX6wxZHg5TFZkngHN3jxFV-bMIakHmwKMbQu-w3ol5Tn02l9Jg8PewvOS43cqAmPM0joBKFR_kVAK');">
@@ -686,6 +686,19 @@
             reveals.forEach(reveal => {
                 revealObserver.observe(reveal);
             });
+
+            // Seasonal inspirations carousel control
+            const seasonalSlider = document.getElementById('seasonal-slider');
+            const seasonalPrev = document.getElementById('seasonal-prev');
+            const seasonalNext = document.getElementById('seasonal-next');
+            if (seasonalSlider && seasonalPrev && seasonalNext) {
+                seasonalPrev.addEventListener('click', () => {
+                    seasonalSlider.scrollBy({ left: -360, behavior: 'smooth' });
+                });
+                seasonalNext.addEventListener('click', () => {
+                    seasonalSlider.scrollBy({ left: 360, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 <script src="theme-toggles.js"></script>
