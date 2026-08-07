@@ -277,20 +277,21 @@
 </div>
 </nav>
 <!-- Hero: Floral Journal -->
-<section class="relative min-h-[819px] flex items-center justify-center pt-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<section class="relative min-h-[819px] flex items-center justify-center pt-24 px-margin-mobile md:px-margin-desktop overflow-hidden bg-black">
 <div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="A breathtaking, high-end editorial photograph of a massive, unstructured floral installation featuring sprawling vines, deep burgundy peonies, and soft cream roses. The setting is a grand, sunlit greenhouse with minimalist glass walls. The lighting is soft and natural, creating a serene, timeless mood. The color palette emphasizes organic greens, muted whites, and rich floral tones against a bright, airy background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9Gj1k6hkgTLU2mkpGbLUwa_Y7xAvCORBNvgotqCvDjTt7NFPbggiF6YcsU2bKTbzNVja-_5SpmwjTd8sG1KbCqy_TbPHFx3RK5Qh_OxM_lspiKOJrKS19zk64sN7ukk4KybGzPbP4of_it0dzxw_GPrqg824DS2NmRqCJ0CeEXF1Qymt3Wk1quj9KaK6J_TOaQEiPqDKyp7H08VOqIMltHNehWU1avCR4pHAuPXDtA75lxd0CNXhc')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="w-full h-full bg-cover bg-center opacity-70" data-alt="A breathtaking, high-end editorial photograph of a massive, unstructured floral installation featuring sprawling vines, deep burgundy peonies, and soft cream roses. The setting is a grand, sunlit greenhouse with minimalist glass walls. The lighting is soft and natural, creating a serene, timeless mood. The color palette emphasizes organic greens, muted whites, and rich floral tones against a bright, airy background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9Gj1k6hkgTLU2mkpGbLUwa_Y7xAvCORBNvgotqCvDjTt7NFPbggiF6YcsU2bKTbzNVja-_5SpmwjTd8sG1KbCqy_TbPHFx3RK5Qh_OxM_lspiKOJrKS19zk64sN7ukk4KybGzPbP4of_it0dzxw_GPrqg824DS2NmRqCJ0CeEXF1Qymt3Wk1quj9KaK6J_TOaQEiPqDKyp7H08VOqIMltHNehWU1avCR4pHAuPXDtA75lxd0CNXhc')"></div>
+<!-- High contrast dark gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/65"></div>
 </div>
 <div class="relative z-10 max-w-4xl mx-auto text-center reveal-up">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Editorial Insights</span>
-<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6">Floral Journal</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+<span class="inline-block font-label-sm text-xs md:text-sm text-amber-200 uppercase tracking-[0.3em] px-4 py-1.5 rounded-full border border-amber-200/30 bg-black/40 backdrop-blur-md mb-6">Editorial Insights</span>
+<h1 class="font-display-lg text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-serif mb-6 drop-shadow-2xl leading-tight">Floral Journal</h1>
+<p class="font-body-lg text-lg md:text-2xl text-white/95 max-w-2xl mx-auto mb-10 drop-shadow-lg font-medium leading-relaxed">
                     A curated collection of thoughts, trends, and inspirations for the modern romantic. Discover the artistry behind bespoke floral design.
                 </p>
-<div class="inline-block border-b border-primary pb-1 cursor-pointer hover:opacity-70 transition-opacity">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Read Featured Story</span>
-</div>
+<a href="#featured" class="inline-block border-b-2 border-amber-300 pb-1 cursor-pointer hover:text-amber-200 transition-colors">
+<span class="font-label-sm text-sm uppercase tracking-widest text-white font-semibold drop-shadow">Read Featured Story &rarr;</span>
+</a>
 </div>
 </section>
 <!-- Section 1: Featured Story -->
@@ -643,6 +644,17 @@
             };
             
             observeElements();
+
+            const checkBlogVisibility = () => {
+                document.querySelectorAll('.reveal-up').forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+            checkBlogVisibility();
+            setTimeout(checkBlogVisibility, 150);
 
             // Sticky Header Logic
             const header = document.getElementById('main-nav');
