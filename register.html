@@ -229,19 +229,9 @@
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
-<header class="w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto flex justify-between items-center z-50 relative">
-<div class="font-display-lg text-headline-md md:text-headline-lg text-primary tracking-widest uppercase">
-            Floréa
-         </div>
-<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="index.html">
-<span class="font-label-sm text-label-sm">RETURN TO HOME</span>
-<span class="material-symbols-outlined text-sm">close</span>
-</a>
-</header>
-<main class="flex-grow">
+<main class="flex-grow min-h-screen flex items-center justify-center">
 <!-- 1. Hero & Registration Section -->
-<section class="relative w-full min-h-[921px] flex items-center py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<section class="relative w-full min-h-screen flex items-center py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="md:col-span-5 flex flex-col justify-center fade-in-up z-10 md:pr-12">
 <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">
                     Join the World of Bloom
@@ -265,7 +255,10 @@
 <img class="object-cover w-full h-full opacity-40 mix-blend-multiply" data-alt="A lush 4K photograph of a delicate floral arrangement featuring white peonies and muted eucalyptus." src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=2560&auto=format&fit=crop"/>
 </div>
 <div class="glass-panel gold-border p-8 md:p-12 w-full max-w-md relative z-10 fade-in-up stagger-delay-2 rounded-lg shadow-[0px_20px_50px_rgba(27,48,34,0.05)]">
-<h2 class="font-headline-md text-headline-md text-primary mb-8 text-center">Create Your Account</h2>
+<div class="text-center mb-6">
+<a class="font-display-lg text-4xl text-primary tracking-widest uppercase inline-block hover:opacity-80 transition-opacity" href="index.html">Floréa</a>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center">Create Your Account</h2>
 <form class="flex flex-col gap-8">
 <div class="relative fade-in-up stagger-delay-1">
 <input class="input-floral w-full font-body-md text-body-md text-on-background py-2 px-0 placeholder-transparent peer" id="fullname" placeholder="Full Name" type="text"/>
