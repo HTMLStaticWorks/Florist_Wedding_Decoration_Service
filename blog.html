@@ -214,7 +214,7 @@
   html.dark .text-on-surface, html.dark .text-on-background {
     color: #fbf9f4 !important;
   }
-  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white {
+  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white, html.dark .bg-surface-container-high, html.dark .bg-surface-container-highest, html.dark .bg-surface-dim, html.dark .bg-surface-bright {
     background-color: #1a231e !important;
     color: #fbf9f4 !important;
   }
@@ -229,6 +229,54 @@
   }
   html.dark .border-primary\/30, html.dark .border-primary-container\/30 {
     border-color: rgba(212, 175, 55, 0.2) !important;
+  }
+  html.dark .text-primary {
+    color: #e9c349 !important;
+  }
+  html.dark .border-primary {
+    border-color: #e9c349 !important;
+  }
+  html.dark .border-primary\/20 {
+    border-color: rgba(233, 195, 73, 0.2) !important;
+  }
+  html.dark .border-primary\/10 {
+    border-color: rgba(233, 195, 73, 0.1) !important;
+  }
+  html.dark .text-primary\/60 {
+    color: rgba(233, 195, 73, 0.6) !important;
+  }
+  html.dark .text-primary\/80 {
+    color: rgba(233, 195, 73, 0.8) !important;
+  }
+  html.dark .bg-primary {
+    background-color: #e9c349 !important;
+    color: #1b1c19 !important;
+  }
+  html.dark .bg-primary-container {
+    background-color: #4d3d00 !important;
+    color: #ffe088 !important;
+  }
+  html.dark .text-on-primary-container {
+    color: #ffe088 !important;
+  }
+  html.dark .hover\:text-primary:hover {
+    color: #e9c349 !important;
+  }
+  html.dark .hover\:bg-primary:hover {
+    background-color: #e9c349 !important;
+    color: #1b1c19 !important;
+  }
+  html.dark select {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+    color-scheme: dark;
+  }
+  html.dark select option {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark input, html.dark textarea {
+    color-scheme: dark;
   }
   html.dark .organic-shadow {
     box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
@@ -246,7 +294,7 @@
                 Floréa
             </a>
 <!-- Nav Links (Desktop) -->
-<div class="hidden xl:flex space-x-8 items-center">
+<div class="hidden xl:flex gap-8 items-center">
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="index.html">Home</a>
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="home2.html">Alternative Home</a>
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="services.html">Services</a>
@@ -254,12 +302,12 @@
     <a class="text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1 font-bold hover:opacity-80 transition-all duration-300 scale-95" href="blog.html">Blog</a>
 </div>
 <!-- Trailing Actions & Toggles -->
-<div class="hidden xl:flex items-center space-x-4">
-    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
+<div class="hidden xl:flex items-center gap-4">
+    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center w-10 h-10 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
         <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
         <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
     </button>
-    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest border border-primary/20 px-3 py-1.5 rounded-full text-xs" title="Toggle RTL/LTR">
+    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest flex items-center justify-center w-10 h-10 rounded-full border border-primary/20 text-[11px]" title="Toggle RTL/LTR">
         RTL
     </button>
     <a class="hidden xl:inline-block border border-primary text-primary dark:border-primary-fixed dark:text-primary-fixed px-6 py-3 uppercase tracking-wider hover:bg-primary hover:text-on-primary dark:hover:bg-primary-fixed dark:hover:text-on-primary-fixed transition-colors duration-300" href="register.html">
@@ -342,31 +390,40 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Card 1 -->
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Tablescape Inspiration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVT9pIYm8_tfBKV19VpJdwSKUZKtWnDFzUX1H_z9OL8vlDfS0Wjst6w7evE3XDpn5UAzLaLrH_rSDUFpHa73_CUhHu3ukYSrBBoZjeGCumMfzRg0pEY7ZVEBwsUAB5xjNVltn1am9q0RclhxPdBrPBSznk0s8TwIhbIpX1sOJhewHMc6GNmbdK6N4Ot84UjrYWc9Jwzue5Z-Yu7IM9CFKMglpRIXsChLepaXvp_UN6Z6ENCOzIjVMT"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Styling</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Creating Intimate Tablescapes</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Elevating the guest experience through low, conversational floral arrangements and thoughtful details.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 <!-- Card 2 -->
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Ceremony Arch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEm-5Pw1VwlCmhMiIu_i7F1rbkUDM3fuNpvEDSniwOIQj21eVqNQhikC0Q4TKcsPNuUnBz7XlxpH0vOq21ERRTO0wj78OuqsMYOSkKAMlIl4_TGsooordLtjgHDT0Ip2aKbH1m10IZ2vV44mMPHi83H5FWu3fou20OPeUiP9K5m-SLIMAF2gzsZqOVUesKFBLtOzjASLfPecnGDiSHKJ7pG1pupzhDkVyt1vmzJFGwMg9-4kUychyk"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Venues</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Architectural Ceremony Arches</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Moving beyond the standard archway to create immersive, structural floral environments for your vows.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 <!-- Card 3 -->
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.2s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.2s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Details and Boutonnieres" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD62nbz5GW8YC6q7zyRvZQTrNF1l5So8tl5qd_-qvh8MivOcycaI8ySfCZFKSYCqnieORdzXWXGLSkZC-tQOrGHrFFEcMWops858gFzczW27HWaDZ_-B1CyUW2Uby4h4P-V1Zs1_GzYWk7m9jzdEDtl8U0CpYsCm34OsW3ZqmNlWeRpZXCFogi_gJg3uORpyGus0aNITH0vA1DxymI31mOjoZY8e3oEdLmNcqQ2nXMXPYPtiCSrPLVn"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Details</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">The Art of the Boutonnière</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Small statements. Curating delicate floral details that complement without overpowering.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -377,21 +434,27 @@
 <div class="h-px w-16 bg-primary mx-auto mt-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Wildflower Bouquets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu8h5TwwK_CSpK_4x32hbZALM3ue6OAxuzAWLs1wmwUhKL5zmkxCoBB8No29FmT-hen7BxnjtYU7Pdzt3ec17ez61RtjV1VThdgUV0SAoY1gjrv16_j_qDfDgMeG0FdXeGCNIWbQKCwNLBYa7KxDNwhnlCjMuKTW7CydBy0XTZ0VuljD3ZSNbiBOujkukFRoVxQfc9TIfgWs4fplqAMmabFm2-D9l43jBpOn3qhfJ63moDfty_PkW-"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Bouquets</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Embracing Wildflowers</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">How to incorporate foraging and local wildflowers into your bridal bouquet for a natural look.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Classic Roses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7k4EB5hXPMAdMJc-sJIztq7s-CQSS_Zn36ODgF9ZcuwXPzjWUlLCn0YJq5YnGLR_bnmiJtfTQKEtySjBrdIsZdPkAuIfp6HW5iGk8CVT6qDXGMIahikoxbAsXDcnih2bmRCtfgg4bI9lPkyS7Nx0WTGatqCV50AjOCnOFIoa55WLIO5y7zpkEFwdCCg658tCBaqxmGz_YST2f0DIcAW84C3TzJOH5Oub1UsBlpjIlpaARLerKMivD"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Bouquets</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">The Timeless Rose</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Reimagining classic roses with modern styling techniques and unusual color palettes.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -402,29 +465,38 @@
 <div class="h-px w-16 bg-primary mx-auto mt-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Hanging Installations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxFloqgaZt36sqh_4n43YPehb2eBVyPn1se_mZ3Nr1gcbwMwDYEQRdklSyM3UjBBJ4QJRE6YNH3GhTYCikgeTkAk6D5IkNXN-oq1Tihe2bxxrzz2RorfwQkzjRJaCwyfQtksgSFOf30tV8mGKEvVkaF6JkTmLwBxVQklyl718DNtrmFHCV8vqsw5VU1jpcNSIxxQO9Ynz-X1CK2_sTReujAfp1A6y9haToOypVI1-FaDiNmCC8Yo6x"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Decor</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Hanging Floral Installations</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Transform your venue with breathtaking suspended floral clouds above the dining area.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Aisle Runners" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkbw4vUNGazznRnfOU0Y83MqU9e3KeCXDTtZQla0lexlerpQKt76FBzGXOFMbrufh3-LiITNESAakZykYMeQhUxvKENhlTogtS4IADmouNHiqU1XnKEo3Xv-QUlAQeOzZWiq6OjnbvhqdX1q4p9H94OWa3UHnDzoUogM_-gncCZe-kyH5Rat43Qomf-WfQY4awnyvWhgKLESVhQZvb5Lrnx_3B3UKu3PVEVrRCOXJ5EwRUMIoLToOv"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Ceremony</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Lush Aisle Runners</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Creating a romantic pathway with continuous floral borders for your walk down the aisle.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.2s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.2s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Welcome Signs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWhXa4FRGWnPfTe_REF_Xn1IW4qFiyP8YjT9HfNsnJONgPl9iSC5LIWVBvSjxSupiPCbhTqvAc6qxWYjWyWfe93zBmEsXxY9-SY3MzBbC9nkJskeW-FFGNz3f3YzzAO2JceM3QXdJz_hmEEOQFJ-EgLNlEMFKip6yfMNqYAvOiS9Zd4XRXNtWpTDaYfY1h5fWN9MIQoNOA6wzWb-QPNSR3gK4mQ8NKA-9BhZipEEEHh6hV6oBYxK9j"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Details</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Adorning Signage</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">First impressions matter: styling welcome signs and seating charts with floral accents.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -435,21 +507,27 @@
 <div class="h-px w-16 bg-primary mx-auto mt-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Spring Blooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEtkro6zPwHLBcz8ytaMeBO14is5uFBKkUfbY_EAO1-bdeZYeN8FMVgXO5q_L_HXg-M94r0Oczv81lg0sdyA3qgfyXaDTEz79DxFaCqARA7PhKRuSOvinX0PmxodFD8u5rOC5TuWcz37PCmj_9PmzwMm81z2IEwpYDQX3-iIC6HkadQacfTMuoOj3_pWPNLuOnpGeX2fNnkIApZzEU0ew6ECI3V2SSDq_8vhGCJCJnIJMAe3niSekD"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Spring</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Spring Wedding Flowers</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A comprehensive guide to the best blooms available in spring, from peonies to sweet peas.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Autumn Tones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtyz-CtelljAuOv9juIzcqLlEMR4p60I7P7r9AymZZri_Cy_dZ8kmUV5W_lujCI8EQ-rOSNQiWQAH8MfH0wQlwomV_sfJWvumn9IXyIYTdLetFvIdXMMp0UwpnQ-X5r3eQFFTlJStslz8iVS-SwBgK6bFZy_chFtnTaL7pFJCf_F8phPLsaNAxHl73V8_4b5EXxsb3E6En0dyArP8bbBEA82wmYfEnE5iwtXmpHgRnLue0gnpa6ths"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Autumn</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Rich Autumn Palettes</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Embracing deeper tones, dried elements, and rich textures for a fall celebration.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -460,29 +538,38 @@
 <div class="h-px w-16 bg-primary mx-auto mt-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Consultation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-4YMxf2UwSVNhaT0NC8LBE8HYr6usNbRQkziWuekgxlNKKSQTEf1E55biAteJuWbEneMNJqlRV331kn6HG7o188GZ6OsU8BA_cWsYUlzfhVcEvPwiT1c7T6DmVpgwhv6Yib-5yDdoigKKKWFYk47w7AquaaJ0DqIHrSFoOg-Zei2dKOSqv2PIAbxbYEcUvFhmsgg2JOKM0jQZSZph5rEHfbqwhrdUwG2Io7UTlXyYhsWxDFjubQOY"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Advice</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Preparing for Your Floral Consultation</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">What to bring and what to expect when meeting your florist for the first time.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Budgeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBqS0IQ180Xwx9d00CZqYrwozookLgXS6Bsle7zrUaLLRFHchiwOBdexRyyjRGBJjo7yJtNgwPU7bBNu4MTRohcr_J9rF7dPFNf7XgpLkFCOxd5YC1ThKjt7rUwUla8jCqkbUANxmlOSe2lvhIkXNi7vMm4kx6-D-pjNdTPcpW7l0RxUX3FW-0itUkvKwIBWGaNJjPUmUJSrOYeh5YJsl2uvqEITanASfDTwjgF1RLsTfBdkCXw1ZY"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Budget</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Maximizing Your Floral Budget</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Smart ways to allocate your floral budget without compromising on visual impact.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.2s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.2s;">
 <div class="aspect-[3/4] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Repurposing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXYRYx1oesb18YsQ0yWq4bbAczviTGnFLuSrKo5qPwrtORHuydtwwz2Jo_STDOzvbFxSf1-CKUYaGcsQLOyxpRuMj-U7flqZOSaC6lNv8DOW3K6FofSFumxepmJO_mAhS44KtB2tlFvmc7eUyhCIis3XWwa2c8d3apzg8yhSL1jwdptmJQ6X-yArUbes3YA5KfnEeArX1HISslQT8l_aU9Q6qew3RiU-NBESsJK7eKoL0AD4rt8HXs"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Sustainability</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Repurposing Ceremony Flowers</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Clever logistics for moving floral installations from the ceremony to the reception.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -493,21 +580,27 @@
 <div class="h-px w-16 bg-primary mx-auto mt-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Color Blocking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBXdm6tPU9jL2RMipUneUPVGMPkHvv7bovCd-aD2GFVVCO9QH0EA-HeW6AhsxSJHHX00-A1kYVHdsEFY33Id_RHCnKp_wSSfLYk4Nvv3eEY10jB8O5Bg7BeH1PP74o03M3ypW3VsmIVmOSlMa-yZiH8zP0oiJEh7eYdNTeJLDcuDb0NbFxHI-UvkHtKKf-1ny7fTmoBJ3JtC6U9Jw74ZpBBMoMPewO8eKVBDvZ37nQQA5K0ddDPEfz"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Trends</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Floral Color Blocking</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A bold new trend in wedding design featuring dramatic, segmented color groupings.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
-<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30" style="transition-delay: 0.1s;">
+<article class="group reveal-up hover-lift cursor-pointer bg-surface p-4 border border-brand/30 flex flex-col h-full" style="transition-delay: 0.1s;">
 <div class="aspect-[16/9] overflow-hidden mb-6 bg-surface-container relative">
 <img alt="Ikebana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnTBRzOr5UrodROVqsTfLz_XEHy9YBBu-GOkMpemqhTdGtlCpXU92YvoIkSQou_ALefnekgzkE5s14v13lOkVECEgiLA8DGSAIXtNTcSQft412mZ-vjv0bXP7uepRcG3Uzr3dqX7M8Ldg4qYDb5Q_9PXMlr9lKExUTbw8Rwpf5pa81sO6UeHiVWDlgj9hJODP1WHipJDE-HriYKPxoFmeQbF0vvehIq4bBSfKyifZCl76VDG6ANM8q"/>
 </div>
 <div class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Design</div>
 <h4 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-3">Ikebana Inspired Arrangements</h4>
 <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The minimalist Japanese floral art form influencing modern, structural centerpieces.</p>
+<div class="mt-auto pt-6 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest group-hover:text-primary-fixed transition-colors inline-flex items-center">Read More <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span></span>
+</div>
 </article>
 </div>
 </section>
@@ -591,7 +684,7 @@
                     </p>
                 </div>
                 
-                <div class="flex space-x-4">
+                <div class="flex gap-4">
                     <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Instagram">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />

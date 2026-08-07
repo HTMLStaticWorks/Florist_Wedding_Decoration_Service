@@ -210,7 +210,7 @@
   html.dark .text-on-surface, html.dark .text-on-background {
     color: #fbf9f4 !important;
   }
-  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white {
+  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white, html.dark .bg-surface-container-high, html.dark .bg-surface-container-highest, html.dark .bg-surface-dim, html.dark .bg-surface-bright {
     background-color: #1a231e !important;
     color: #fbf9f4 !important;
   }
@@ -225,6 +225,54 @@
   }
   html.dark .border-primary\/30, html.dark .border-primary-container\/30 {
     border-color: rgba(212, 175, 55, 0.2) !important;
+  }
+  html.dark .text-primary {
+    color: #e9c349 !important;
+  }
+  html.dark .border-primary {
+    border-color: #e9c349 !important;
+  }
+  html.dark .border-primary\/20 {
+    border-color: rgba(233, 195, 73, 0.2) !important;
+  }
+  html.dark .border-primary\/10 {
+    border-color: rgba(233, 195, 73, 0.1) !important;
+  }
+  html.dark .text-primary\/60 {
+    color: rgba(233, 195, 73, 0.6) !important;
+  }
+  html.dark .text-primary\/80 {
+    color: rgba(233, 195, 73, 0.8) !important;
+  }
+  html.dark .bg-primary {
+    background-color: #e9c349 !important;
+    color: #1b1c19 !important;
+  }
+  html.dark .bg-primary-container {
+    background-color: #4d3d00 !important;
+    color: #ffe088 !important;
+  }
+  html.dark .text-on-primary-container {
+    color: #ffe088 !important;
+  }
+  html.dark .hover\:text-primary:hover {
+    color: #e9c349 !important;
+  }
+  html.dark .hover\:bg-primary:hover {
+    background-color: #e9c349 !important;
+    color: #1b1c19 !important;
+  }
+  html.dark select {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+    color-scheme: dark;
+  }
+  html.dark select option {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark input, html.dark textarea {
+    color-scheme: dark;
   }
   html.dark .organic-shadow {
     box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
@@ -242,7 +290,7 @@
                 Floréa
             </a>
 <!-- Nav Links (Desktop) -->
-<div class="hidden xl:flex space-x-8 items-center">
+<div class="hidden xl:flex gap-8 items-center">
     <a class="text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1 font-bold hover:opacity-80 transition-all duration-300 scale-95" href="index.html">Home</a>
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="home2.html">Alternative Home</a>
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="services.html">Services</a>
@@ -250,12 +298,12 @@
     <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="blog.html">Blog</a>
 </div>
 <!-- Trailing Actions & Toggles -->
-<div class="hidden xl:flex items-center space-x-4">
-    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
+<div class="hidden xl:flex items-center gap-4">
+    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center w-10 h-10 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
         <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
         <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
     </button>
-    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest border border-primary/20 px-3 py-1.5 rounded-full text-xs" title="Toggle RTL/LTR">
+    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest flex items-center justify-center w-10 h-10 rounded-full border border-primary/20 text-[11px]" title="Toggle RTL/LTR">
         RTL
     </button>
     <a class="hidden xl:inline-block border border-primary text-primary dark:border-primary-fixed dark:text-primary-fixed px-6 py-3 uppercase tracking-wider hover:bg-primary hover:text-on-primary dark:hover:bg-primary-fixed dark:hover:text-on-primary-fixed transition-colors duration-300" href="register.html">
@@ -302,8 +350,8 @@
 <div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A close-up, editorial-style photograph of a minimalist bridal bouquet held gently by hands wearing silk gloves. The bouquet features rare, creamy white peonies, delicate sweet peas, and structured calla lilies. The background is a soft, out-of-focus light gray wall. The lighting is soft and directional, highlighting the textural contrast between the smooth silk and the ruffled petals. The mood is modern, serene, and exquisitely luxurious." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsrxIKcp93_j5hWTn9AcWZMZzFSUU-w8-Qf0Me878BDalBLSU2dl3Z-zlClZDmm7B_Jarx9bMqOJMBk6QQwcL9eD5Rps1DgSTWudri4wHcxUAW7zYTczKBSMwDoWMDkWbhTos8kwqyYB-2gY4DgqB4hucGQ8Tixji2jeaE-HO3_AkL-jwY2jXVj6CyxsKscEDHRna_Vhar_JufNqGLE9HafiTae5XASv1HXk-wJUkEaZsIDay5H975')"></div>
 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
-<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-<h3 class="font-headline-md text-headline-md text-white mb-2 font-serif drop-shadow-md">The Minimalist</h3>
+<div class="absolute bottom-0 left-0 w-full p-6 md:p-5 lg:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+<h3 class="font-headline-md text-2xl lg:text-headline-md text-white mb-2 font-serif drop-shadow-md">The Minimalist</h3>
 <p class="font-label-sm text-label-sm text-white/90 uppercase tracking-widest group-hover:text-amber-200 transition-colors font-medium drop-shadow-sm">View Collection</p>
 </div>
 </div>
@@ -311,8 +359,8 @@
 <div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal delay-100 md:-translate-y-8">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An expansive, lush romantic bridal bouquet resting on a vintage wooden table. The arrangement overflows with blush garden roses, deep burgundy ranunculus, and trailing emerald ivy. Soft, golden hour light spills across the scene, casting gentle shadows and illuminating the rich, saturated colors of the blooms against a neutral, light-toned background. The aesthetic feels timeless, abundant, and deeply romantic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFSbKctvgLlhZnfIR45an5euku7sxBzQZTS4EuIgkwWTvkEnorHcxYwIyzKSEBOB88FN69fZB3IypumEjW1L91wa4CCwoVC3Uyf2A1FYUV20gAWSAAVAimfFZobPl4FZXG6XszHit5XPS9Izv-TEVc7H5HPe8fzYqB3wOsvkv4sSHMB83rPXkzTx0wQHt61fRs50vwA0t8akz1JAEGpC6v4exFUIBFtlwr9XJgIJG4LxUwI1kcJi6R')"></div>
 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
-<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-<h3 class="font-headline-md text-headline-md text-white mb-2 font-serif drop-shadow-md">The Romantic</h3>
+<div class="absolute bottom-0 left-0 w-full p-6 md:p-5 lg:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+<h3 class="font-headline-md text-2xl lg:text-headline-md text-white mb-2 font-serif drop-shadow-md">The Romantic</h3>
 <p class="font-label-sm text-label-sm text-white/90 uppercase tracking-widest group-hover:text-amber-200 transition-colors font-medium drop-shadow-sm">View Collection</p>
 </div>
 </div>
@@ -320,8 +368,8 @@
 <div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal delay-200">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An avant-garde, sculptural floral arrangement standing alone in a bright, modern gallery setting. The piece combines stark, dried architectural branches with vibrant, exotic orchids in unexpected shades of rust and mustard. The background is pristine white, emphasizing the bold, asymmetric silhouette of the design. The lighting is crisp and even, highlighting the textural interplay and artistic intention behind the composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXuws5SQZ5hF2kcIJVtX99GB4ifQnwfBryiAn44xQzTaj6nDAKt-Q2yMo6sKsCpmubA4W3yNy-4W4YzdiEehompdXkI0YWgO3FvfXYDIo_8dm_eC1vryi9wD9dDaN138q-j6EIw33wCJIn192Qt1_NQPcY_nh_rJToSJOwlU4QopQKQJNyQ6jlSoS_xc2H_DnhAKpMd-VZGBdggLoBxs4VqMI0sRRpYFzahR8GnI-7Zg317cUeNSJY')"></div>
 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
-<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-<h3 class="font-headline-md text-headline-md text-white mb-2 font-serif drop-shadow-md">The Avant-Garde</h3>
+<div class="absolute bottom-0 left-0 w-full p-6 md:p-5 lg:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+<h3 class="font-headline-md text-2xl lg:text-headline-md text-white mb-2 font-serif drop-shadow-md">The Avant-Garde</h3>
 <p class="font-label-sm text-label-sm text-white/90 uppercase tracking-widest group-hover:text-amber-200 transition-colors font-medium drop-shadow-sm">View Collection</p>
 </div>
 </div>
@@ -344,7 +392,7 @@
 </div>
 </div>
 <div class="reveal delay-100 flex flex-col justify-center">
-<h3 class="font-headline-md text-primary mb-4">Modern Minimalist</h3>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Modern Minimalist</h3>
 <p class="text-on-surface-variant mb-6">Clean lines, structural arrangements, and a focus on premium, singular blooms create an atmosphere of refined restraint and contemporary elegance.</p>
 <a class="font-label-sm text-primary uppercase tracking-widest hover:text-inverse-primary transition-colors inline-flex items-center" href="#">
                     Explore Style <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
@@ -354,7 +402,7 @@
 <!-- Style 2: Garden Romantic -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="reveal flex flex-col justify-center order-2 md:order-1">
-<h3 class="font-headline-md text-primary mb-4">Garden Romantic</h3>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Garden Romantic</h3>
 <p class="text-on-surface-variant mb-6">Lush, overflowing compositions of diverse florals and trailing greenery that evoke the untamed beauty of a secret English garden.</p>
 <a class="font-label-sm text-primary uppercase tracking-widest hover:text-inverse-primary transition-colors inline-flex items-center" href="#">
                     Explore Style <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
@@ -377,7 +425,7 @@
 <div class="absolute -bottom-8 -right-8 w-1/2 aspect-square bg-cover bg-center shadow-ambient hidden md:block border-4 border-background" data-alt="Close up of floral arrangement details" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1JVH4mosMNSpQd1DDxiby487Lf2fwgzvB5x_ogCp4vahv_Zo93jW6x9I1rmtLl4CIMSuQ2I67nIA7HISNHrP-hd2imqhr19Df-ywXv3e8_dMXz-JQMfkMQBzcfeltMRZiEqo07umGfDFofXNBf1terY77KumfxZGzFJ61SbHPFnncutSARQRhajhCkK0_lqLCCTphUfRYmKmBuFqjyZbYkq2F47aM_eQYP3REc3IrIb5FT11MkFtj');"></div>
 </div>
 <div class="reveal delay-200">
-<h2 class="font-headline-lg text-primary mb-6">Our Philosophy</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Our Philosophy</h2>
 <div class="w-16 h-px bg-primary/30 mb-8"></div>
 <p class="font-body-lg text-on-surface-variant mb-6">We believe that flowers are more than decoration; they are the medium through which we tell your love story. Every stem is chosen with intention.</p>
 <p class="font-body-md text-on-surface-variant mb-8">At Floréa, our approach blends classical fine art principles with organic, free-flowing design. We collaborate closely with our couples to translate their vision into an immersive floral experience that feels both deeply personal and effortlessly luxurious.</p>
@@ -389,7 +437,7 @@
 <section class="py-section-padding bg-surface px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
 <div class="text-center mb-16 reveal">
-<h2 class="font-headline-lg text-primary mb-4">The Aurelia Difference</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">The Aurelia Difference</h2>
 <div class="w-16 h-px bg-primary/30 mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -420,7 +468,7 @@
 <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
 <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
 <div>
-<h2 class="font-headline-lg text-primary mb-4">Seasonal Inspirations</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Seasonal Inspirations</h2>
 <p class="text-on-surface-variant">Highlighting the most exquisite blooms currently in season.</p>
 </div>
 <div class="mt-4 md:mt-0 flex space-x-2">
@@ -467,7 +515,7 @@
 <section class="py-section-padding bg-surface-container-low px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
 <div class="text-center mb-16 reveal">
-<h2 class="font-headline-lg text-primary mb-4">Investment Offerings</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Investment Offerings</h2>
 <div class="w-16 h-px bg-primary/30 mx-auto mb-6"></div>
 <p class="text-on-surface-variant max-w-2xl mx-auto">Curated packages designed to provide a cohesive floral narrative for your entire celebration.</p>
 </div>
@@ -515,15 +563,15 @@
 <!-- Section 7: Recent Wedding Stories -->
 <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="text-center mb-12 reveal">
-<h2 class="font-headline-lg text-primary mb-4">Real Weddings</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Real Weddings</h2>
 <div class="w-16 h-px bg-primary/30 mx-auto mb-6"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="group relative overflow-hidden aspect-[4/3] reveal">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Elegant indoor wedding reception setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs_aevYE1AyAcM9vk48ZhUhMLmOoXS2AGmrm2X5Ez4l4krT38mhQpJx-RD15JvxAAT7egnHqddl5hlPSujgkGNBG6Q_Ms-Wr3dzadmx-kacj4E9YAVj4E1PfvD8Qy9sdviFZyhyok0myTH_06PgpyA1Nzq2ajN1rdu0uBSrKhidnhltOWaHdRJKWK8GhPIIjxUQigeyR3EFZRtdbqje6CQ4wlDSPremhADGCXwid4SLkXkXSF2NKbQ');"></div>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
-<div class="absolute inset-0 flex flex-col justify-end p-8">
-<h3 class="font-headline-md text-white mb-2">Eleanor &amp; James</h3>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+<h3 class="font-headline-md text-2xl md:text-3xl text-white mb-2 drop-shadow-md">Eleanor &amp; James</h3>
 <p class="font-label-sm text-white/80 uppercase tracking-widest mb-4">The Grand Estate | Modern Classic</p>
 <a class="text-white hover:text-primary-fixed flex items-center font-label-sm transition-colors w-max" href="#">
                     View Gallery <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
@@ -532,9 +580,9 @@
 </div>
 <div class="group relative overflow-hidden aspect-[4/3] reveal delay-100">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Outdoor garden wedding ceremony setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDECbxe3RQ4G7PT3NkFUjS4Ru4o2HZhBmWeefd3Ux3kJhQrDr0BruW85twRL1xv9m6JWfxjn6ZTgtCeIY9F6BLQJ2FDSQlF9gHxEF78ZL_-MQqmTTHKt5SQNTgBl1riR3rzpfaA3mqbgAOce1KC-QjIHVKyd7AKvs22LtNEgqtNJNgyXrd6JfdwYBY5gimOSB7AF3G6JgNwRmkk1BifezROJzudh_wjSWbWKIvJYDrI0CrMbAZXLDQL');"></div>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
-<div class="absolute inset-0 flex flex-col justify-end p-8">
-<h3 class="font-headline-md text-white mb-2">Sophia &amp; Liam</h3>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+<h3 class="font-headline-md text-2xl md:text-3xl text-white mb-2 drop-shadow-md">Sophia &amp; Liam</h3>
 <p class="font-label-sm text-white/80 uppercase tracking-widest mb-4">Botanical Gardens | Garden Romantic</p>
 <a class="text-white hover:text-primary-fixed flex items-center font-label-sm transition-colors w-max" href="#">
                     View Gallery <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
@@ -550,7 +598,7 @@
 <section class="py-section-padding bg-surface-container-high px-margin-mobile md:px-margin-desktop flex items-center justify-center">
 <div class="max-w-4xl mx-auto text-center reveal">
 <span class="material-symbols-outlined text-4xl text-primary/40 mb-6">format_quote</span>
-<h2 class="font-headline-lg text-primary mb-8 leading-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8 leading-tight">
             "Floréa transformed our venue into something out of a dream. Their attention to detail, the quality of the blooms, and the sheer artistry of their designs left us and our guests speechless."
         </h2>
 <div class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">— Olivia &amp; Thomas</div>
@@ -569,7 +617,7 @@
 <div class="absolute inset-0 bg-background/80 mix-blend-overlay"></div>
 </div>
 <div class="relative z-10 text-center px-4 max-w-2xl mx-auto reveal bg-surface/90 backdrop-blur-sm p-12 border border-primary/20 shadow-ambient">
-<h2 class="font-headline-lg text-primary mb-4">Let's Create Together</h2>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Let's Create Together</h2>
 <p class="text-on-surface-variant mb-8 font-body-lg">Begin the journey of designing your bespoke floral narrative. We are currently accepting commissions for the 2024 and 2025 wedding seasons.</p>
 <a class="inline-block bg-primary text-white px-10 py-4 uppercase tracking-wider font-label-sm hover:bg-inverse-primary transition-colors duration-300" href="#">Request a Consultation</a>
 </div>
@@ -636,7 +684,7 @@
                     </p>
                 </div>
                 
-                <div class="flex space-x-4">
+                <div class="flex gap-4">
                     <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Instagram">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
