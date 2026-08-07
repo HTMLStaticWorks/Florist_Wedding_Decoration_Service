@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
     // Attach click listener to any mobile menu trigger button
-    const menuTriggers = document.querySelectorAll('#mobile-menu-btn, button.md\\:hidden, button.lg\\:hidden');
+    const menuTriggers = document.querySelectorAll('#mobile-menu-btn, button.md\\:hidden, button.lg\\:hidden, button.xl\\:hidden');
     menuTriggers.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
