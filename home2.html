@@ -301,23 +301,28 @@
 </div>
 </nav>
 <!-- Hero Section -->
-<section class="relative h-screen min-h-[700px] flex items-center justify-center pt-20 overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-black">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-[20s] ease-out hover:scale-110" data-alt="A sweeping cinematic view of a majestic destination wedding setup on a rugged cliffside overlooking the ocean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-UVYDXH2MDZECphZ0jvMOsAwLRJ3iDFNowBzJmklqUoSzjtRKkdpvuTP54c6C7uJvGDIcFjKOW3i-27VZ1fwmTWE1Ma_oO-gIfuygyXBZUUl8-Ka5hgJfNJ-3dDo6TV9G9NsYWPtZNy5Qi6tmzEm91HqI7nB5fr7fwuw4RtPdOcMqyQj9hYNuh1dZj_3xNTTVXVrdoRKZSXJMoGrqwtqgDClmF9qahTAS7ZXjihSEHE8HawjESptE"/>
-<div class="absolute inset-0 bg-black/40"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90"></div>
+<div class="w-full h-full bg-cover bg-center object-cover transform scale-105 transition-transform duration-[20s] ease-out hover:scale-110" data-alt="A sweeping cinematic view of a majestic destination wedding setup on a rugged cliffside overlooking the ocean." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-UVYDXH2MDZECphZ0jvMOsAwLRJ3iDFNowBzJmklqUoSzjtRKkdpvuTP54c6C7uJvGDIcFjKOW3i-27VZ1fwmTWE1Ma_oO-gIfuygyXBZUUl8-Ka5hgJfNJ-3dDo6TV9G9NsYWPtZNy5Qi6tmzEm91HqI7nB5fr7fwuw4RtPdOcMqyQj9hYNuh1dZj_3xNTTVXVrdoRKZSXJMoGrqwtqgDClmF9qahTAS7ZXjihSEHE8HawjESptE');"></div>
+<!-- High contrast dark gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/70"></div>
 </div>
-<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto mt-20 md:mt-0 slide-in-left">
-<span class="font-label-sm text-primary-fixed uppercase tracking-widest block mb-4 fade-in-up" style="transition-delay: 200ms;">Editorial Floristry &amp; Design</span>
-<h1 class="font-display-lg text-[50px] leading-[60px] md:text-[84px] md:leading-[92px] text-on-primary mb-6 drop-shadow-lg fade-in-up" style="transition-delay: 400ms;">The Wildest Love</h1>
-<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mx-auto mb-12 drop-shadow-md fade-in-up" style="transition-delay: 600ms;">Curating untamed beauty and classical elegance for life's most extraordinary moments.</p>
-<a class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-on-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-on-primary hover:text-primary transition-all duration-500 fade-in-up hover:scale-105" href="#explore" style="transition-delay: 800ms;">
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col items-center justify-center">
+<span class="inline-block font-label-sm text-xs md:text-sm text-amber-200 uppercase tracking-[0.3em] px-5 py-2 rounded-full border border-amber-200/40 bg-black/40 backdrop-blur-md mb-6 shadow-lg">Editorial Floristry &amp; Design</span>
+<h1 class="font-display-lg text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-serif tracking-tight mb-6 drop-shadow-2xl leading-tight">The Wildest Love</h1>
+<p class="font-body-lg text-base sm:text-lg md:text-2xl text-white/95 max-w-2xl mx-auto mb-10 drop-shadow-lg font-normal leading-relaxed">Curating untamed floral beauty and classical elegance for life's most extraordinary celebrations.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-label-sm text-sm uppercase tracking-widest hover:bg-amber-300 hover:text-black transition-all duration-300 shadow-xl hover:scale-105 font-semibold" href="#explore">
                     Discover Our Approach
-                </a>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-black/40 border border-white/80 text-white font-label-sm text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 shadow-xl hover:scale-105 backdrop-blur-md font-semibold" href="booking.html">
+                    Book Consultation
+</a>
 </div>
-<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-<a class="text-on-primary/70 hover:text-on-primary transition-colors" href="#explore">
-<span class="material-symbols-outlined text-3xl">expand_more</span>
+</div>
+<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+<a class="text-white/80 hover:text-white transition-colors" href="#explore" title="Scroll Down">
+<span class="material-symbols-outlined text-4xl drop-shadow-md">expand_more</span>
 </a>
 </div>
 </section>
@@ -786,9 +791,23 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .reveal-container').forEach((el) => {
+        const animElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .reveal-container');
+        animElements.forEach((el) => {
             observer.observe(el);
         });
+
+        // Trigger immediate visibility for elements already in viewport
+        const checkViewportVisibility = () => {
+            animElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        checkViewportVisibility();
+        window.addEventListener('load', checkViewportVisibility);
+        setTimeout(checkViewportVisibility, 150);
 
         // Header scroll effect
         const header = document.getElementById('main-header');
