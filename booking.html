@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking - Floréa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#0b2013",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#cde6d1",
+                      "on-tertiary-fixed-variant": "#374b3f",
+                      "on-secondary-container": "#516857",
+                      "secondary-fixed": "#d0e9d4",
+                      "tertiary": "#4e6356",
+                      "outline-variant": "#d0c5af",
+                      "surface-dim": "#dbdad5",
+                      "surface-container-low": "#f5f3ee",
+                      "primary-container": "#d4af37",
+                      "on-background": "#1b1c19",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4d4635",
+                      "surface-bright": "#fbf9f4",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface": "#fbf9f4",
+                      "background": "#fbf9f4",
+                      "on-primary-container": "#554300",
+                      "inverse-primary": "#e9c349",
+                      "secondary-fixed-dim": "#b4cdb8",
+                      "surface-container": "#f0eee9",
+                      "primary": "#735c00",
+                      "on-surface": "#1b1c19",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed": "#d1e8d7",
+                      "tertiary-fixed-dim": "#b5ccbc",
+                      "on-tertiary-fixed": "#0b1f15",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-primary-fixed": "#241a00",
+                      "secondary": "#4d6453",
+                      "outline": "#7f7663",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#35493d",
+                      "surface-tint": "#735c00",
+                      "tertiary-container": "#a1b8a8",
+                      "primary-fixed": "#ffe088",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#364c3c",
+                      "inverse-surface": "#30312e",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-variant": "#e4e2dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "section-padding": "120px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "92px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-bottom-color: #d4af37 !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 32px;
+            bottom: -32px;
+            width: 2px;
+            background-color: rgba(115, 92, 0, 0.2); /* primary/20 */
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+      </style>
+
+<!-- Dark Mode CSS Overrides -->
+<style id="dark-theme-overrides">
+  html.dark body, html.dark .bg-background {
+    background-color: #1b1c19 !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .text-on-surface, html.dark .text-on-background {
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-white\/70, html.dark .bg-surface-container-lowest\/90 {
+    background-color: rgba(26, 35, 30, 0.9) !important;
+  }
+  html.dark .text-secondary {
+    color: #d0e9d4 !important;
+  }
+  html.dark .text-on-surface-variant {
+    color: #b4cdb8 !important;
+  }
+  html.dark .border-primary\/30, html.dark .border-primary-container\/30 {
+    border-color: rgba(212, 175, 55, 0.2) !important;
+  }
+  html.dark .organic-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  }
+</style>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-white/70 backdrop-blur-md dark:bg-black/70 font-label-sm text-label-sm border-b border-primary/30 shadow-sm top-0 sticky z-50 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-display-lg text-headline-md md:text-headline-md text-primary dark:text-primary-fixed tracking-widest uppercase no-underline hover:opacity-80 transition-opacity duration-300" href="#">
+                Floréa
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="index.html">Home</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="home2.html">Alternative Home</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="services.html">Services</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="gallery.html">Gallery</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="blog.html">Blog</a>
+    <a class="text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1 font-bold hover:opacity-80 transition-all duration-300 scale-95" href="booking.html">Booking</a>
+</div>
+<!-- Trailing Actions & Toggles -->
+<div class="hidden md:flex items-center space-x-4">
+    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+    </button>
+    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest border border-primary/20 px-3 py-1.5 rounded-full text-xs" title="Toggle RTL/LTR">
+        RTL
+    </button>
+    <a class="hidden md:inline-block border border-primary text-primary dark:border-primary-fixed dark:text-primary-fixed px-6 py-3 uppercase tracking-wider hover:bg-primary hover:text-on-primary dark:hover:bg-primary-fixed dark:hover:text-on-primary-fixed transition-colors duration-300" href="register.html">
+        Sign Up
+    </a>
+    <a class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-3 uppercase tracking-wider hover:bg-inverse-primary transition-colors duration-300" href="booking.html">
+        Enquire Now
+    </a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full min-h-[614px] flex items-center justify-center pt-24 pb-16 px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-30" data-alt="A soft, out-of-focus background of delicate white and pale green floral arrangements in a bright, airy greenhouse setting. The lighting is diffused and ethereal, creating a sense of calm and luxury in the New Editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQHd0y8vdJoPRTa-daXnl1E9MJxPuj1WtDKawx9vUfANrbyPYUnT8b4n1A-TFFdUmVR2gRTuOed-KonYom2amtDrNs08cILWQ5zg78rYGB5800pyw9RBP_0QARqhibTwuSSzfLycDOGX8sf_fRwhM4UD24GWSjxed1Xip1FLKPK2jKWWnuDz0rmaO9YetU1ApJabhFISs1jQJ8rIJ6gKDCg5jvnvpjFKjbZz5eDzHlNlccV1Haj3Gp')"></div>
+</div>
+<div class="relative z-10 text-center max-w-3xl mx-auto">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6">Begin Your Journey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Curating timeless floral narratives for your most treasured moments.</p>
+</div>
+</header>
+<main class="max-w-container-max mx-auto">
+<!-- Section 1: Intro -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row gap-section-padding items-center">
+<div class="md:w-1/2">
+<img class="w-full h-auto object-cover rounded-sm shadow-sm" data-alt="A close-up, high-fashion editorial style photograph of a florist's hands delicately arranging a single, perfect white rose. The background is a soft, muted sage green, emphasizing craftsmanship and organic beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfdYkI0fcFRyoyO5HthFC_6BmIszhJwZALpXStuQhvaicJhitPeal-bYLgdOpa93k9ICUHasakTb378bkfl8LvMo1prNjOBymOqg55n1MFBln0yWpozK2CMVGczpfkeyB3Y-BzhzljTGU0BSJr7_W7qdxlgjuFJ5kCuMVLtQvAeButygwySSk_rUGla9aTBRKZWE_Z-OoIHJEj0wm7ww2uj2vql-WFCBnipcQexHSGO2vgGZ4votli"/>
+</div>
+<div class="md:w-1/2 space-y-6">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">Tell Us About Your Event</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Every celebration is a unique story waiting to be told through the language of flowers. We invite you to share your vision with us. Whether it's an intimate gathering or a grand affair, our dedicated team will meticulously craft an botanical experience that resonates with your personal aesthetic and leaves a lasting impression.
+                </p>
+<div class="pt-8">
+<p class="font-headline-md text-[24px] text-secondary italic">Aurelia</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-2">Lead Floral Designer</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Booking Form -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-center text-primary mb-12">Consultation Booking Form</h2>
+<form class="space-y-8 bg-surface p-8 md:p-12 shadow-[0px_20px_50px_rgba(27,48,34,0.05)] border border-primary/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="name" placeholder="Full Name" type="text"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="name">Full Name</label>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="email" placeholder="Email Address" type="email"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="email">Email Address</label>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="phone" placeholder="Phone Number" type="tel"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="phone">Phone Number</label>
+</div>
+<div class="relative">
+<select class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors appearance-none" id="event_type">
+<option disabled="" selected="" value="">Event Type</option>
+<option value="wedding">Wedding</option>
+<option value="corporate">Corporate Event</option>
+<option value="private">Private Party</option>
+<option value="editorial">Editorial Shoot</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-3 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors" id="date" type="date"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm font-label-sm" for="date">Event Date</label>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="location" placeholder="Location/Venue" type="text"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="location">Location/Venue</label>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="guests" placeholder="Guest Count" type="number"/>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="guests">Guest Count</label>
+</div>
+</div>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b border-secondary/30 py-2 font-body-md text-body-md text-on-surface focus:ring-0 transition-colors placeholder-transparent peer" id="details" placeholder="Additional Details" rows="3"></textarea>
+<label class="absolute left-0 -top-3.5 text-secondary text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-on-surface-variant peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm font-label-sm" for="details">Share your vision...</label>
+</div>
+<div class="text-center pt-4">
+<button class="bg-secondary text-on-secondary font-label-sm text-label-sm px-10 py-4 uppercase tracking-widest hover:bg-primary transition-colors duration-300 shadow-[0px_10px_30px_rgba(27,48,34,0.1)]" type="button">Request Consultation</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Section 3: Choose Your Decoration Package -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary mb-4">Curated Experiences</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Select a foundation for your floral vision. Each package is tailored to reflect your unique narrative.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="border border-primary/20 p-8 hover:shadow-lg transition-shadow bg-surface group">
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Intimate</h3>
+<p class="font-label-sm text-secondary uppercase tracking-widest mb-6">From $2,500</p>
+<p class="font-body-md text-on-surface-variant mb-6 min-h-[100px]">Perfect for elopements and micro-weddings. Includes bridal party personals, a delicate ceremony focal point, and subtle reception accents.</p>
+<button class="w-full border border-secondary text-secondary py-3 font-label-sm uppercase tracking-widest group-hover:bg-secondary group-hover:text-on-secondary transition-colors">Select</button>
+</div>
+<div class="border border-primary/20 p-8 shadow-md bg-surface-container-low group relative transform md:-translate-y-4">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-on-primary font-label-sm px-4 py-1 uppercase tracking-widest text-[10px]">Most Popular</div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Classic</h3>
+<p class="font-label-sm text-secondary uppercase tracking-widest mb-6">From $5,500</p>
+<p class="font-body-md text-on-surface-variant mb-6 min-h-[100px]">Comprehensive design for full-scale events. Features lush ceremony installations, elevated centerpieces, and styled cocktail hour accents.</p>
+<button class="w-full bg-secondary text-on-secondary py-3 font-label-sm uppercase tracking-widest hover:bg-primary transition-colors">Select</button>
+</div>
+<div class="border border-primary/20 p-8 hover:shadow-lg transition-shadow bg-surface group">
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Bespoke</h3>
+<p class="font-label-sm text-secondary uppercase tracking-widest mb-6">From $12,000</p>
+<p class="font-body-md text-on-surface-variant mb-6 min-h-[100px]">A fully immersive botanical environment. Transformative ceiling installations, custom-built structures, and abundant floral styling throughout.</p>
+<button class="w-full border border-secondary text-secondary py-3 font-label-sm uppercase tracking-widest group-hover:bg-secondary group-hover:text-on-secondary transition-colors">Select</button>
+</div>
+</div>
+</section>
+<!-- Section 4: Seasonal Availability -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface-container">
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary mb-6">Nature's Palette</h2>
+<p class="font-body-md text-on-surface-variant mb-8">We design with the rhythm of the seasons, sourcing the finest blooms when they are at their absolute peak.</p>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-primary/20 pb-2">
+<span class="font-headline-md text-[20px] text-secondary">Spring (Mar-May)</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Peonies, Ranunculus, Sweet Pea</span>
+</div>
+<div class="flex justify-between items-end border-b border-primary/20 pb-2">
+<span class="font-headline-md text-[20px] text-secondary">Summer (Jun-Aug)</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Dahlias, Garden Roses, Delphinium</span>
+</div>
+<div class="flex justify-between items-end border-b border-primary/20 pb-2">
+<span class="font-headline-md text-[20px] text-secondary">Autumn (Sep-Nov)</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Amaranthus, Chocolate Cosmos, Cymbidium</span>
+</div>
+<div class="flex justify-between items-end border-b border-primary/20 pb-2">
+<span class="font-headline-md text-[20px] text-secondary">Winter (Dec-Feb)</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Hellebores, Anemones, Amaryllis</span>
+</div>
+</div>
+</div>
+<div>
+<img class="w-full h-[500px] object-cover rounded-sm shadow-sm" data-alt="A moody, elegant arrangement of deep burgundy and soft blush flowers in a muted, textured vase, exemplifying autumnal seasonal design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRI3VK7li3p94rOLWcvoGxh_VSQnhlqOzuSwpTea1krnwOXcMJU1nU49bsYb9OHma7IpAZVyPbPsw8s-_bhyHx-2mIfyq0YjisZk61w8QDCAXVazskmd13Gne6NM3IPaGJn8UXkRmJ1U7RQBmibZfUK3s9EYkO_rsMpRVkjgE1__Ddsbql0a5bk5RgWj7yaaNzG651KtnAIhS_zwRtgHJETjXuomLs_2XTuncZAD-gEzJV425U7gbw"/>
+</div>
+</div>
+</section>
+<!-- Section 5: Consultation Time Slots -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto text-center">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary mb-6">Schedule Your Vision Call</h2>
+<p class="font-body-md text-on-surface-variant mb-12">Select a preliminary time for us to connect and discuss the aesthetics of your event.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm">
+<div class="font-label-sm uppercase tracking-widest mb-1">Tuesday</div>
+<div>10:00 AM</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm">
+<div class="font-label-sm uppercase tracking-widest mb-1">Tuesday</div>
+<div>2:00 PM</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm">
+<div class="font-label-sm uppercase tracking-widest mb-1">Wednesday</div>
+<div>11:00 AM</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm">
+<div class="font-label-sm uppercase tracking-widest mb-1">Thursday</div>
+<div>3:30 PM</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm opacity-50 cursor-not-allowed">
+<div class="font-label-sm uppercase tracking-widest mb-1">Friday</div>
+<div>Booked</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm">
+<div class="font-label-sm uppercase tracking-widest mb-1">Friday</div>
+<div>1:00 PM</div>
+</button>
+<button class="border border-primary/30 py-4 px-2 hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-all font-body-md text-primary rounded-sm col-span-2 md:col-span-2 bg-surface-container-low text-secondary border-dashed">
+<div class="font-label-sm uppercase tracking-widest">View Full Calendar</div>
+</button>
+</div>
+</section>
+<!-- Section 6: Large Event & Wedding Orders -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary/5 z-0"></div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<img class="w-full aspect-[4/3] object-cover rounded-sm shadow-md" data-alt="A sweeping, grandiose floral installation cascading down a grand staircase in a historic venue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtxHI9wlwGtBBJPVkcZRUDWAEChdVfEplSXCvogMwJAzLIE9ZhH4RelcR4dZ4te1CgNv2K0_JarDSzzhFeO0NW_qqqFZcOcjoaYAANssVQh_oECtKeWhXvF3DYX6sdUrajFTjllfHT-6q8X7PDSi4YqF4NrCOz4r1IyEONL3c3GKxCZrTppabPmcltPiVgpxBGlbQC-bihO_ztV8AgKkAlF6qDxxRn5XQNKdDLIOnIf-4Gy3VE3R1J"/>
+</div>
+<div class="md:w-1/2 space-y-6 bg-surface p-8 md:p-12 shadow-sm border border-primary/10">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">Grandiose Affairs</h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                    For extensive installations, multi-day celebrations, and destination events requiring comprehensive logistics and design teams, we offer dedicated concierge design services.
+                </p>
+<ul class="space-y-4 font-body-md text-on-surface-variant mt-6">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 text-sm mt-1">diamond</span>
+<span>Full-scale spatial transformations and custom structural builds.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 text-sm mt-1">diamond</span>
+<span>Dedicated on-site styling team for duration of event.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 text-sm mt-1">diamond</span>
+<span>Sourcing of rare, specialty, and international blooms.</span>
+</li>
+</ul>
+<div class="pt-6">
+<a class="inline-flex items-center text-primary font-label-sm uppercase tracking-widest hover:text-secondary transition-colors border-b border-primary/30 pb-1" href="#">
+                        Inquire for Large Scale Design
+                        <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: How Booking Works -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-center text-primary mb-16">The Process</h2>
+<div class="space-y-8">
+<div class="timeline-item flex gap-6">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm z-10 mt-1">1</div>
+<div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">Inquiry &amp; Vision</h3>
+<p class="font-body-md text-on-surface-variant">Submit your initial details. We review your date, venue, and aesthetic inspirations to ensure we are the perfect fit.</p>
+</div>
+</div>
+<div class="timeline-item flex gap-6">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-highest border border-primary/30 text-primary flex items-center justify-center font-label-sm z-10 mt-1">2</div>
+<div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Consultation</h3>
+<p class="font-body-md text-on-surface-variant">A 45-minute collaborative discussion to dive deep into your color palette, preferred textures, and the overall feeling you wish to evoke.</p>
+</div>
+</div>
+<div class="timeline-item flex gap-6">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-highest border border-primary/30 text-primary flex items-center justify-center font-label-sm z-10 mt-1">3</div>
+<div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">Proposal &amp; Design Deck</h3>
+<p class="font-body-md text-on-surface-variant">We present a customized, visual mood board and detailed preliminary estimate outlining the botanical ingredients and installations.</p>
+</div>
+</div>
+<div class="timeline-item flex gap-6">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-highest border border-primary/30 text-primary flex items-center justify-center font-label-sm z-10 mt-1">4</div>
+<div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">Securing Your Date</h3>
+<p class="font-body-md text-on-surface-variant">Upon approval of the proposal, a signed contract and retainer officially reserve our studio for your celebration.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: FAQ -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto bg-surface-container-low">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-center text-primary mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="border-b border-secondary/20 pb-4">
+<button class="faq-toggle flex justify-between items-center w-full text-left font-body-lg text-body-lg text-on-surface py-2 hover:text-primary transition-colors">
+<span>What is your typical booking timeline?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</button>
+<div class="accordion-content font-body-md text-body-md text-on-surface-variant mt-2 pr-8">
+                        For weddings and large events, we recommend booking 6-12 months in advance to ensure availability and ample time for the design process. Smaller events may be accommodated with less notice, subject to our schedule.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-secondary/20 pb-4">
+<button class="faq-toggle flex justify-between items-center w-full text-left font-body-lg text-body-lg text-on-surface py-2 hover:text-primary transition-colors">
+<span>Is a deposit required to secure a date?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</button>
+<div class="accordion-content font-body-md text-body-md text-on-surface-variant mt-2 pr-8">
+                        Yes, a non-refundable retainer fee of 30% of your estimated proposal is required to formally secure your date in our calendar. The remaining balance is due 30 days prior to your event.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-secondary/20 pb-4">
+<button class="faq-toggle flex justify-between items-center w-full text-left font-body-lg text-body-lg text-on-surface py-2 hover:text-primary transition-colors">
+<span>Can I make changes to my proposal after booking?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</button>
+<div class="accordion-content font-body-md text-body-md text-on-surface-variant mt-2 pr-8">
+                        Absolutely. We understand that details may evolve. You can make adjustments to your floral plan up to 45 days before the event, provided the total cost does not drop below your initial contracted minimum.
+                    </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border-b border-secondary/20 pb-4">
+<button class="faq-toggle flex justify-between items-center w-full text-left font-body-lg text-body-lg text-on-surface py-2 hover:text-primary transition-colors">
+<span>Do you travel for destination events?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</button>
+<div class="accordion-content font-body-md text-body-md text-on-surface-variant mt-2 pr-8">
+                        Yes, we love translating our aesthetic to new environments. Destination events require additional travel, accommodation, and logistics fees, which will be clearly outlined in your custom proposal.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Section 9: Final Consultation CTA -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop text-center bg-primary text-on-primary">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-display-lg mb-6 text-on-primary">Ready to Begin?</h2>
+<p class="font-body-lg mb-10 text-on-primary/80">Let us translate your vision into a living work of art. Our calendar is currently open for the upcoming season.</p>
+<button class="bg-surface text-primary font-label-sm px-12 py-5 uppercase tracking-widest hover:bg-surface-container-low transition-colors duration-300 shadow-lg">
+                Submit Your Request
+            </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden mt-20">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAESXC4SMK2VFhKELf6SmkJiZU4ZJ_yjgDjLZlA34N84BxSn99_luzZltUUTWlrxFH8jRJTwdR4A-mabLU017uZUXg4EEhejxfnPeK_XFEfxSokTLiKVZ3pt3hFfiA9-Gi2cM32Zb8FfaVNBo6tsRe2vLPwU4yKAjw0Cp3FHqOYwTQIdz9NTvJMdKOa1kdk7WuDLSyiR8MQ_K1LDLKm9Z-76QiHw5M_Lzt76exSzpwLgeSYdJchZnIL');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b2013] via-[#0b2013]/95 to-[#0b2013]/70 mix-blend-multiply"></div>
+        <!-- Extra dark gradient for readability -->
+        <div class="absolute inset-0 bg-[#0b2013]/80"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <!-- Brand Section -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                <a href="index.html" class="font-display-lg text-[48px] text-[#d4af37] mb-6 hover:opacity-80 transition-opacity leading-none">Floréa</a>
+                <p class="font-body-sm text-[#b4cdb8] max-w-xs font-light leading-relaxed">
+                    A boutique floral design studio specializing in editorial, romantically undone aesthetics for weddings of distinction.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="md:col-span-2 md:col-start-6 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Navigation</h4>
+                <div class="flex flex-col space-y-5">
+                    <a href="index.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Home</a>
+                    <a href="services.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Services</a>
+                    <a href="gallery.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Gallery</a>
+                    <a href="blog.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Journal</a>
+                </div>
+            </div>
+            
+            <!-- Studio Details -->
+            <div class="md:col-span-3 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">The Studio</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light">
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Location</span>
+                        128 Floral Avenue, Suite 4<br/>
+                        Botanica District, NY 10012
+                    </p>
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Hours</span>
+                        Tuesday – Saturday<br/>
+                        10:00 AM – 6:00 PM<br/>
+                        <span class="text-[11px] italic text-[#d4af37] mt-1 block">By appointment only</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Contact & Social -->
+            <div class="md:col-span-2 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Connect</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light mb-8">
+                    <p>
+                        <a href="mailto:hello@aureliafloral.com" class="hover:text-[#d4af37] transition-colors border-b border-[#b4cdb8]/30 pb-1">hello@aureliafloral.com</a>
+                    </p>
+                    <p>
+                        <a href="tel:+12125550198" class="hover:text-[#d4af37] transition-colors">212.555.0198</a>
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Pinterest">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.166.329.332.682.479 1.05-4.092 1.439-8.563 2.15-8.98 2.22-.057-.597-.09-1.201-.09-1.815a8.59 8.59 0 01.077-1.025zM12 20.518c-2.22 0-4.22-.857-5.733-2.261.428-.088 4.397-.935 8.016-2.613a26.046 26.046 0 01-1.353 3.966c-.302.046-.61.083-.92.115a8.487 8.487 0 01-1.357.108zm2.63-1.745c.08-.226.155-.453.226-.684.81-2.628 1.107-4.887 1.144-5.201 3.232.88 5.485 2.122 5.568 2.17A8.528 8.528 0 0114.63 18.773z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-[#d4af37]/20 pt-8 mt-8">
+            <p class="font-label-sm text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase mb-4 md:mb-0">
+                &copy; 2026 Floréa. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase font-label-sm">
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+                <span>Designed with Elegance</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                
+                // Close others
+                document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                    if (otherContent !== content && otherContent.classList.contains('open')) {
+                        otherContent.classList.remove('open');
+                        otherContent.previousElementSibling.querySelector('.material-symbols-outlined').textContent = 'add';
+                    }
+                });
+
+                // Toggle current
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                    icon.textContent = 'add';
+                } else {
+                    content.classList.add('open');
+                    icon.textContent = 'remove';
+                }
+            });
+        });
+    </script>
+<script src="theme-toggles.js"></script>
+</body></html>

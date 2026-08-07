@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Floréa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#0b2013",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#cde6d1",
+                      "on-tertiary-fixed-variant": "#374b3f",
+                      "on-secondary-container": "#516857",
+                      "secondary-fixed": "#d0e9d4",
+                      "tertiary": "#4e6356",
+                      "outline-variant": "#d0c5af",
+                      "surface-dim": "#dbdad5",
+                      "surface-container-low": "#f5f3ee",
+                      "primary-container": "#d4af37",
+                      "on-background": "#1b1c19",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4d4635",
+                      "surface-bright": "#fbf9f4",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface": "#fbf9f4",
+                      "background": "#fbf9f4",
+                      "on-primary-container": "#554300",
+                      "inverse-primary": "#e9c349",
+                      "secondary-fixed-dim": "#b4cdb8",
+                      "surface-container": "#f0eee9",
+                      "primary": "#735c00",
+                      "on-surface": "#1b1c19",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed": "#d1e8d7",
+                      "tertiary-fixed-dim": "#b5ccbc",
+                      "on-tertiary-fixed": "#0b1f15",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-primary-fixed": "#241a00",
+                      "secondary": "#4d6453",
+                      "outline": "#7f7663",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#35493d",
+                      "surface-tint": "#735c00",
+                      "tertiary-container": "#a1b8a8",
+                      "primary-fixed": "#ffe088",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#364c3c",
+                      "inverse-surface": "#30312e",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-variant": "#e4e2dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "section-padding": "120px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Playfair Display"],
+                      "label-sm": ["Montserrat"],
+                      "body-md": ["Montserrat"],
+                      "body-lg": ["Montserrat"],
+                      "headline-lg": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "display-lg": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(251, 249, 244, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .organic-shadow {
+            box-shadow: 0px 20px 50px rgba(77, 100, 83, 0.05); /* tertiary slightly modified for tint */
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Minimal scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.background');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: theme('borderRadius.full');
+        }
+    </style>
+
+<!-- Dark Mode CSS Overrides -->
+<style id="dark-theme-overrides">
+  html.dark body, html.dark .bg-background {
+    background-color: #1b1c19 !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .text-on-surface, html.dark .text-on-background {
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-white\/70, html.dark .bg-surface-container-lowest\/90 {
+    background-color: rgba(26, 35, 30, 0.9) !important;
+  }
+  html.dark .text-secondary {
+    color: #d0e9d4 !important;
+  }
+  html.dark .text-on-surface-variant {
+    color: #b4cdb8 !important;
+  }
+  html.dark .border-primary\/30, html.dark .border-primary-container\/30 {
+    border-color: rgba(212, 175, 55, 0.2) !important;
+  }
+  html.dark .organic-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  }
+</style>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-white/70 backdrop-blur-md dark:bg-black/70 font-label-sm text-label-sm border-b border-primary/30 shadow-sm top-0 sticky z-50 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-display-lg text-headline-md md:text-headline-md text-primary dark:text-primary-fixed tracking-widest uppercase no-underline hover:opacity-80 transition-opacity duration-300" href="#">
+                Floréa
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="index.html">Home</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="home2.html">Alternative Home</a>
+    <a class="text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1 font-bold hover:opacity-80 transition-all duration-300 scale-95" href="services.html">Services</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="gallery.html">Gallery</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="blog.html">Blog</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="booking.html">Booking</a>
+</div>
+<!-- Trailing Actions & Toggles -->
+<div class="hidden md:flex items-center space-x-4">
+    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+    </button>
+    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest border border-primary/20 px-3 py-1.5 rounded-full text-xs" title="Toggle RTL/LTR">
+        RTL
+    </button>
+    <a class="hidden md:inline-block border border-primary text-primary dark:border-primary-fixed dark:text-primary-fixed px-6 py-3 uppercase tracking-wider hover:bg-primary hover:text-on-primary dark:hover:bg-primary-fixed dark:hover:text-on-primary-fixed transition-colors duration-300" href="register.html">
+        Sign Up
+    </a>
+    <a class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-3 uppercase tracking-wider hover:bg-inverse-primary transition-colors duration-300" href="booking.html">
+        Enquire Now
+    </a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sunlit, high-end floral design studio. Large windows let in soft natural light, illuminating work tables scattered with premium, rare blooms in soft whites, muted greens, and delicate blush tones. The aesthetic is clean, editorial, luxury minimalism with intentional whitespace and organic textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaCwRCXzl6xy0tWbinfAPtwWpcND4DWg0L9KlbCeuhsOeW8Ai4Mm7bWzOWV5AY9rleM_twBvRVoa8y6Vcq9gkXjX9gMK0OcE_pBkzt2moVRnHyf0J1d94g5dE6sHWddszdR30hOrkXCHO8QiFG7lWz1StsSojD4d_kfYvCVWTzpvIF76aZALmfTkQCi7pqy78OC25W1slY-y9pq5Gvy7IX0O3hhp-jAL4iCbtySS8rlOvVqSirpz17')"></div>
+<div class="absolute inset-0 bg-background/30 backdrop-blur-sm"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto fade-in-up">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6">Our Floral Artistry</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Meticulously curated designs tailored to elevate your most cherished moments. 
+                    We blend classical luxury with modern, organic sensibilities.
+                </p>
+</div>
+</section>
+<!-- Section 1: All Floral Services -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 fade-in-up">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-4">Curated Offerings</h2>
+<div class="h-px w-24 bg-primary-container mx-auto opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service Card 1 -->
+<div class="group relative overflow-hidden bg-surface-container-low organic-shadow fade-in-up stagger-1 h-[400px]">
+<img class="w-full h-2/3 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist, elegant wedding floral arrangement featuring white orchids and subtle greenery in a clear glass vase, set against a pristine cream background. High-fashion lighting, showcasing the delicate textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMVov_yKhJJwoz_e9q3adPMbwUIAPDitJwNHLDVLfmbN_KYD9spZhY9DfUz_ZJHCne1p2TFx7UfwE02u6tlAlyvMeEB4dfrmK7KJWd38rZsINzTQR9CP0E02BOZcsIV_hdJsjwJ_-kFQgbJtvqbSlHJ6QlADcFY0152yOyiTe8ABPD0oJ_ezRCE7GOPEy2Ta37pyPIVl0h0KoKUKrFEdP924vS1gpRE1wDMHITC_imPdjP9cIjEVC0"/>
+<div class="absolute bottom-0 w-full p-6 bg-surface-container-lowest/90 backdrop-blur-sm border-t border-primary-container/30">
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-secondary mb-2">Weddings</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Bespoke botanical styling for your timeless celebration.</p>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="group relative overflow-hidden bg-surface-container-low organic-shadow fade-in-up stagger-2 h-[400px]">
+<img class="w-full h-2/3 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly stylized corporate event table setting with a low, modern floral centerpiece consisting of striking structural anthuriums and dark foliage on a matte black table. Editorial, moody, sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODmHWRHzWOg1U6RxVEd0y5A1pFNX0uWyHl6xZmPtlQ_gfrfiBh_x-2qUPUYS5tKW0bmiMjEYrGcN5NkLWJbT9FSIGH1rH3dXf8FopElkTpYXotzhFw3ZJJ_c4nhaMnQP1PgRQBoi3Iswv3tmAEC0BHInunKR6gITLJMOxKZcsaJOK4gUq_ngvwGc3CVDdOIRlMcB3PkhaFNOFXTQuxV6ot1HvapS6WFik99ul30Fa97uighhoeyEZ"/>
+<div class="absolute bottom-0 w-full p-6 bg-surface-container-lowest/90 backdrop-blur-sm border-t border-primary-container/30">
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-secondary mb-2">Corporate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Elevated installations for professional environments.</p>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="group relative overflow-hidden bg-surface-container-low organic-shadow fade-in-up stagger-3 h-[400px]">
+<img class="w-full h-2/3 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious private dinner party setup under a canopy of draped fabric, featuring cascading floral installations of wild vines and cream roses hanging above an intimate table setting. Soft, romantic ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx7Y1NLb6050OO_G_JmKiPot8PI8tqqa7QM72_WVmbKiGCHiGmqX9gmhE9fXzNfIeBiHZR9phi2DWtcspjcvyc8p8ljkq_-p9Kl4XDZ7udf8dZGeK3Qf7s8P9L4LJAabdNVH_oNii11nXO99T0ai1IQrFSYH-xAby4EtP6RAGzSmQZgSUtcUr6TLRN4f8qegW6n_O2Vv_kf7SvvpVMO7shp-n3qtS-W5AiTcpDnN3458wMpkls-4XR"/>
+<div class="absolute bottom-0 w-full p-6 bg-surface-container-lowest/90 backdrop-blur-sm border-t border-primary-container/30">
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-secondary mb-2">Events</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Atmospheric designs for intimate gatherings and grand galas.</p>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="group relative overflow-hidden bg-surface-container-low organic-shadow fade-in-up stagger-4 h-[400px]">
+<img class="w-full h-2/3 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up of hands carefully tying a silk ribbon around a small, exquisite bespoke bouquet of rare seasonal blooms in a light, airy studio setting. Focus on craftsmanship and delicate details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR75R2hfKgPmsIRUdLlEkaAmi3V9dCFHB_nS7WrcNUWAUJOqKuMJkou7EmJSsv3c9M2tyPfQPtUB00r6vjaSM7UoqD74u6XJZNPCypJU3vwNwhp3JmmJdceXi_0HPvVkO9oA--4ppTqEsKZrw9w9VReda8xUu8DF1TAAiKCbTxJmtemGBOBR6XNN3VhwAwkvWa4AqksaVb5_PoCTX8-_RhB3lEFblGKHdKNHE9HI_mxEnpRZkkrSzo"/>
+<div class="absolute bottom-0 w-full p-6 bg-surface-container-lowest/90 backdrop-blur-sm border-t border-primary-container/30">
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-secondary mb-2">Bespoke</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Custom creations for daily delivery or special gifting.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Bridal Bouquet Design -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="A stunning, loosely structured bridal bouquet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVpCvza-Cc_VXeDTDtTM9FMAR2_r0ywC0f2UoRsFzpYXo4bQxKlKNOiPNIjFk5XPBwNS54GxVrqLu_xvJJxWE1D9pPPNT31KfhU7Xf_Xeu-ujzqVcmNRfCYg33vxpTKhQlj1SdRTCFG7vgFzqKWT3pAzRWLIViiYMno9V6zSRbCUuR0zj7ptMUePRpG7PrMRWQ33NA0iHjHSFSaXVXr5YSkbE8sFewOxTcflWxh20TlQH9hsC4ex5I"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up mt-12 lg:mt-0">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">The Signature Piece</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Bridal Bouquet Design</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            The bridal bouquet is the emotional centerpiece of your floral story. We approach each bouquet as a unique sculptural work, balancing shape, texture, and movement to complement your silhouette perfectly.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Using only the most premium, ethically sourced blooms, we focus on organic, loose structures that feel both effortlessly natural and meticulously designed. From the initial stem selection to the final hand-dyed silk ribbon binding, every detail is considered.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>View Bouquet Gallery</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Wedding Decoration -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up mt-12 lg:mt-0 order-2 lg:order-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">Complete Vision</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Wedding Decoration</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Transforming your chosen venue into an immersive botanical experience. Our comprehensive wedding decoration service covers every visual touchpoint of your day.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            From welcoming arrangements that set the tone, to grand staircase cascades and delicate powder room details, we ensure a cohesive floral narrative weaves through your entire celebration, reflecting your unique aesthetic and love story.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>Explore Real Weddings</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up order-1 lg:order-2">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="Elegant wedding venue decorated with lush floral arrangements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHyD47sxFzdeyLHnrYDcu7z7-rr2oMD4WrOphHUVAW_PFGvBHkn-racrZsblUInATgr63JVGcm7y0wFnWrRATCMDJ41y7MZ3stjMLcy-WJIxp_npvxCQuU7kai5ZV4eSVse-b6tvfDATSZE3gpWQIzYaHG0bNcv8w2cq5jZzLIQs_QNwq5SXP7nNVASp7XV-4f0QSR4FkNOzBYg-EH1kx63gCtwnGdLy8RbQv28IlFJy90JJCBddAL"/>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Floral Arch & Ceremony Styling -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="Breathtaking floral arch at an outdoor wedding ceremony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNj2nocSv00bgl7okbSFRCyDng4qy39ezUd6FPsRG73osHIbLStr1uoyyFRqpjIaymnaxr3yfED9q5bsKSxcSY38QxwN7Ew8RYgJsFy6YLMkgWnRcM35hiHR_Z9r9n5mTcKsidhc8QXO43IBCuwPB0BvsnEZctUumXrscchJF41ZIBw2duaJ5pahj3B9TYV-NwcJcfNf8BvjDtoxAkKNS9rVBtf4f0pntWz4jAkvFaCyT3vC9cULvQ"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up mt-12 lg:mt-0">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">The Altar</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Floral Arch &amp; Ceremony Styling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Frame the moment you say "I do" with structural masterpieces that blend seamlessly with your surroundings, whether it's a historic chapel or a sunlit garden.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            We design custom arches, deconstructed pillars, meadow aisles, and statement urns that create a sacred, beautiful focal point for your vows, utilizing seasonal branches, trailing vines, and abundant blooms.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>View Ceremony Installations</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Reception & Table Styling -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up mt-12 lg:mt-0 order-2 lg:order-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">The Celebration</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Reception &amp; Table Styling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Elevate the dining experience with textural tablescapes and overhead installations that invite guests into a curated world of beauty and romance.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            From low, sprawling centerpieces encouraging conversation, to dramatic suspended floral clouds, we harmonize flowers with premium linens, taper candles, and elegant tableware to create an unforgettable atmosphere.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>Discover Table Designs</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up order-1 lg:order-2">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="Luxurious wedding reception table setting with floral centerpieces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJnEksNQ_hKswR3AFFrGaRjMZ-gcTcuL-oMR-YxVY_nGXZti9Nr9JRQGrvDE0M2pFrmvSyfPz8UOnww4YO77CHczRpapJxhR3E08OFQVI7N2Nro_w4IxtjNwb0wIIpiKyxokN45qnlPPDEOS3IPnR4wZv_3CoX0Y4frQqwsEEyf4ONMurDl3orIQ31gddqxzhObezN6tGjvOfZA9hzg8g5gsh12ArrMPun316FGIbgkb0DqyrF27Xe"/>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Private & Corporate Events -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="Chic floral arrangement for a corporate or private event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTBbKLLH0ZznpQOGdpteaClYnRZR_d8wQTPK5RRK88YtLZjBh_zEVZV9yE4YpLBY5fTwGCLR0XdhcXp-cUdMBKa5m14mn_aRHLpEBVfs-vBT0bsi3Qt4JB3YKvIXbdGT86pJq4EuvgjVRqBJtp056XEBqkL8U-BKH6QwY-gPiOSwBmIgasrB8Mn5uaUuMcJYcxDnBDRILQUi-zfQt3Cnb3PzAPFWYxhF56Q47OC1gJ7hNa6nnueSd4"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up mt-12 lg:mt-0">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">Beyond Weddings</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Private &amp; Corporate Events</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Striking floral architecture designed to impress, whether you are hosting an intimate milestone dinner or a grand corporate gala.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            We translate brand identities and personal themes into sophisticated botanical installations. Our event services include entrance features, stage styling, bar arrangements, and immersive photo backdrops that captivate your guests.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>View Event Portfolio</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Seasonal Floral Design -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 lg:col-start-2 fade-in-up mt-12 lg:mt-0 order-2 lg:order-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">Nature's Rhythm</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Seasonal Floral Design</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Embracing the fleeting beauty of each season, our designs highlight the finest blooms available at their absolute peak of perfection.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            We prioritize locally grown and thoughtfully sourced flowers, allowing the natural curve of a stem or the unique texture of a seasonal branch to dictate the organic flow of our arrangements. Perfect for editorial shoots, home installations, or boutique styling.
+                        </p>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-label-sm text-label-sm uppercase tracking-widest border-b border-primary-container/30 pb-1 hover:border-secondary" href="#">
+<span>Explore Seasonal Edits</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-5 lg:col-start-8 fade-in-up order-1 lg:order-2">
+<div class="relative w-full aspect-[3/4]">
+<img class="w-full h-full object-cover shadow-sm" data-alt="A beautiful assortment of vibrant, seasonal spring flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDePAMhYwiq2FmxeUuwho62qkm8IKVlbT05HGIJjgHVCveMMHhUSAKxOqIzmah7KAW9hj7S-hiZuCkqYTipwId6TOlc7NXs8v0qWWfakpwv9jdWScQN04EK8AflLRatyMKvnMyq76pFTtlf7HLm8pBlpDmaB_Vc7-qqQfZGAaf-C_dXxW4ncrqWtzvtuQcWNRoubMdM93x39lkxLaWuBvoS6s7LVflzKesvGYiExKywGquV6c-YoUkz"/>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 border border-primary-container/40 z-[-1] hidden md:block"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Our Creative Process -->
+<section class="py-section-padding bg-surface-container-lowest border-t border-primary/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in-up">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 block">The Journey</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-4">Our Creative Process</h2>
+<div class="h-px w-24 bg-primary-container mx-auto opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center fade-in-up stagger-1">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mx-auto mb-6 border border-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">forum</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-secondary mb-3">1. Consultation</h3>
+<p class="font-body-md text-on-surface-variant">An in-depth conversation to understand your vision, aesthetic, and the mood you wish to create.</p>
+</div>
+<div class="text-center fade-in-up stagger-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mx-auto mb-6 border border-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">palette</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-secondary mb-3">2. Proposal</h3>
+<p class="font-body-md text-on-surface-variant">We present a bespoke visual concept, detailing color palettes, bloom selection, and structural designs.</p>
+</div>
+<div class="text-center fade-in-up stagger-3">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mx-auto mb-6 border border-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">eco</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-secondary mb-3">3. Curation</h3>
+<p class="font-body-md text-on-surface-variant">Sourcing the highest quality, unique floral varieties from our trusted network of local and global growers.</p>
+</div>
+<div class="text-center fade-in-up stagger-4">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mx-auto mb-6 border border-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-secondary mb-3">4. Installation</h3>
+<p class="font-body-md text-on-surface-variant">Meticulous on-site styling and execution by our team to ensure flawless perfection on your day.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: Service CTA -->
+<section class="py-section-padding bg-surface-container-low relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center fade-in-up relative z-10">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-6">Let’s Create Your Dream Wedding</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Begin the conversation with our design team. We accept a limited number of commissions each season to ensure unparalleled dedication to your event.
+                </p>
+<a class="inline-block font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 bg-secondary text-on-secondary hover:bg-primary hover:text-on-primary transition-colors duration-300" href="#">
+                    Request a Consultation
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden mt-20">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAESXC4SMK2VFhKELf6SmkJiZU4ZJ_yjgDjLZlA34N84BxSn99_luzZltUUTWlrxFH8jRJTwdR4A-mabLU017uZUXg4EEhejxfnPeK_XFEfxSokTLiKVZ3pt3hFfiA9-Gi2cM32Zb8FfaVNBo6tsRe2vLPwU4yKAjw0Cp3FHqOYwTQIdz9NTvJMdKOa1kdk7WuDLSyiR8MQ_K1LDLKm9Z-76QiHw5M_Lzt76exSzpwLgeSYdJchZnIL');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b2013] via-[#0b2013]/95 to-[#0b2013]/70 mix-blend-multiply"></div>
+        <!-- Extra dark gradient for readability -->
+        <div class="absolute inset-0 bg-[#0b2013]/80"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <!-- Brand Section -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                <a href="index.html" class="font-display-lg text-[48px] text-[#d4af37] mb-6 hover:opacity-80 transition-opacity leading-none">Floréa</a>
+                <p class="font-body-sm text-[#b4cdb8] max-w-xs font-light leading-relaxed">
+                    A boutique floral design studio specializing in editorial, romantically undone aesthetics for weddings of distinction.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="md:col-span-2 md:col-start-6 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Navigation</h4>
+                <div class="flex flex-col space-y-5">
+                    <a href="index.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Home</a>
+                    <a href="services.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Services</a>
+                    <a href="gallery.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Gallery</a>
+                    <a href="blog.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Journal</a>
+                </div>
+            </div>
+            
+            <!-- Studio Details -->
+            <div class="md:col-span-3 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">The Studio</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light">
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Location</span>
+                        128 Floral Avenue, Suite 4<br/>
+                        Botanica District, NY 10012
+                    </p>
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Hours</span>
+                        Tuesday – Saturday<br/>
+                        10:00 AM – 6:00 PM<br/>
+                        <span class="text-[11px] italic text-[#d4af37] mt-1 block">By appointment only</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Contact & Social -->
+            <div class="md:col-span-2 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Connect</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light mb-8">
+                    <p>
+                        <a href="mailto:hello@aureliafloral.com" class="hover:text-[#d4af37] transition-colors border-b border-[#b4cdb8]/30 pb-1">hello@aureliafloral.com</a>
+                    </p>
+                    <p>
+                        <a href="tel:+12125550198" class="hover:text-[#d4af37] transition-colors">212.555.0198</a>
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Pinterest">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.166.329.332.682.479 1.05-4.092 1.439-8.563 2.15-8.98 2.22-.057-.597-.09-1.201-.09-1.815a8.59 8.59 0 01.077-1.025zM12 20.518c-2.22 0-4.22-.857-5.733-2.261.428-.088 4.397-.935 8.016-2.613a26.046 26.046 0 01-1.353 3.966c-.302.046-.61.083-.92.115a8.487 8.487 0 01-1.357.108zm2.63-1.745c.08-.226.155-.453.226-.684.81-2.628 1.107-4.887 1.144-5.201 3.232.88 5.485 2.122 5.568 2.17A8.528 8.528 0 0114.63 18.773z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-[#d4af37]/20 pt-8 mt-8">
+            <p class="font-label-sm text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase mb-4 md:mb-0">
+                &copy; 2026 Floréa. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase font-label-sm">
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+                <span>Designed with Elegance</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // Simple Intersection Observer for fade-in animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+            
+            // Header scroll effect
+            const nav = document.getElementById('main-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-sm');
+                } else {
+                    nav.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+<script src="theme-toggles.js"></script>
+</body></html>

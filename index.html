@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Floréa - Artistry in Bloom</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#0b2013",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#cde6d1",
+                      "on-tertiary-fixed-variant": "#374b3f",
+                      "on-secondary-container": "#516857",
+                      "secondary-fixed": "#d0e9d4",
+                      "tertiary": "#4e6356",
+                      "outline-variant": "#d0c5af",
+                      "surface-dim": "#dbdad5",
+                      "surface-container-low": "#f5f3ee",
+                      "primary-container": "#d4af37",
+                      "on-background": "#1b1c19",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4d4635",
+                      "surface-bright": "#fbf9f4",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface": "#fbf9f4",
+                      "background": "#fbf9f4",
+                      "on-primary-container": "#554300",
+                      "inverse-primary": "#e9c349",
+                      "secondary-fixed-dim": "#b4cdb8",
+                      "surface-container": "#f0eee9",
+                      "primary": "#735c00",
+                      "on-surface": "#1b1c19",
+                      "on-primary-fixed-variant": "#574500",
+                      "tertiary-fixed": "#d1e8d7",
+                      "tertiary-fixed-dim": "#b5ccbc",
+                      "on-tertiary-fixed": "#0b1f15",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-primary-fixed": "#241a00",
+                      "secondary": "#4d6453",
+                      "outline": "#7f7663",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#35493d",
+                      "surface-tint": "#735c00",
+                      "tertiary-container": "#a1b8a8",
+                      "primary-fixed": "#ffe088",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#364c3c",
+                      "inverse-surface": "#30312e",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-variant": "#e4e2dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "section-padding": "120px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "92px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        /* Thin 1px border utility matching design system */
+        .border-luxury {
+            border-color: rgba(212, 175, 55, 0.3); /* Rose Gold / Primary Container at 30% */
+        }
+        
+        /* Soft Ambient Shadow */
+        .shadow-ambient {
+            box-shadow: 0px 20px 50px rgba(27, 48, 34, 0.05);
+        }
+        
+        /* Hide scrollbar for slider */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+<!-- Dark Mode CSS Overrides -->
+<style id="dark-theme-overrides">
+  html.dark body, html.dark .bg-background {
+    background-color: #1b1c19 !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .text-on-surface, html.dark .text-on-background {
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-surface-container, html.dark .bg-surface-container-low, html.dark .bg-surface-container-lowest, html.dark .bg-surface, html.dark .bg-white {
+    background-color: #1a231e !important;
+    color: #fbf9f4 !important;
+  }
+  html.dark .bg-white\/70, html.dark .bg-surface-container-lowest\/90 {
+    background-color: rgba(26, 35, 30, 0.9) !important;
+  }
+  html.dark .text-secondary {
+    color: #d0e9d4 !important;
+  }
+  html.dark .text-on-surface-variant {
+    color: #b4cdb8 !important;
+  }
+  html.dark .border-primary\/30, html.dark .border-primary-container\/30 {
+    border-color: rgba(212, 175, 55, 0.2) !important;
+  }
+  html.dark .organic-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  }
+</style>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-white/70 backdrop-blur-md dark:bg-black/70 font-label-sm text-label-sm border-b border-primary/30 shadow-sm top-0 sticky z-50 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-display-lg text-headline-md md:text-headline-md text-primary dark:text-primary-fixed tracking-widest uppercase no-underline hover:opacity-80 transition-opacity duration-300" href="#">
+                Floréa
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+    <a class="text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1 font-bold hover:opacity-80 transition-all duration-300 scale-95" href="index.html">Home</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="home2.html">Alternative Home</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="services.html">Services</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="gallery.html">Gallery</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="blog.html">Blog</a>
+    <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300" href="booking.html">Booking</a>
+</div>
+<!-- Trailing Actions & Toggles -->
+<div class="hidden md:flex items-center space-x-4">
+    <button id="theme-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full border border-primary/20" title="Toggle Dark/Light Mode">
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:block">light_mode</span>
+    </button>
+    <button id="rtl-toggle" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity font-label-sm uppercase tracking-widest border border-primary/20 px-3 py-1.5 rounded-full text-xs" title="Toggle RTL/LTR">
+        RTL
+    </button>
+    <a class="hidden md:inline-block border border-primary text-primary dark:border-primary-fixed dark:text-primary-fixed px-6 py-3 uppercase tracking-wider hover:bg-primary hover:text-on-primary dark:hover:bg-primary-fixed dark:hover:text-on-primary-fixed transition-colors duration-300" href="register.html">
+        Sign Up
+    </a>
+    <a class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-3 uppercase tracking-wider hover:bg-inverse-primary transition-colors duration-300" href="booking.html">
+        Enquire Now
+    </a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full object-cover" data-alt="A breathtaking, cinematic wide shot of a massive, opulent floral installation in a grand, sunlit greenhouse. Thousands of delicate white and blush roses cascade from the ceiling, interwoven with lush, deep green trailing vines. Soft, diffused morning light filters through the glass panes, creating ethereal rays that illuminate the pristine blooms. The aesthetic is extremely high-end, evoking timeless elegance and serene romance, with a color palette dominated by pristine whites, soft creams, and rich forest greens against a light background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxLsQx1ehZh7Hz76lwSYHf7sBqXmwbiEpqg5xVth6_s-YS6qeRtE4YiUuc5tbhsBxvJBDu4kG5SdDnCfxBX3DOpKiOFGNT334Zwsca5E0fixxXQZB8uV5DfVQToQS77_6wUULIRaBkc9h0K3ImS6NRr3BfIM96UUK87NOsvz6HCoSXMJLp6LR7-o1rfH5mPBF0DOAPk00_48lvtBdSNSQR1w8q6ip3JlvN5Ws6T9uOXCT972S4Bjq_')"></div>
+<!-- Subtle gradient overlay to ensure text legibility while keeping the light aesthetic -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 to-background/20 mix-blend-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center reveal">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-6 drop-shadow-sm leading-tight text-balance">
+                Artistry in Bloom
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 text-balance">
+                Curating timeless, bespoke floral narratives for weddings of distinction. 
+                Where organic beauty meets editorial sophistication.
+            </p>
+<a class="group flex items-center justify-center w-14 h-14 rounded-full border border-primary/30 hover:bg-primary-container hover:border-primary-container transition-all duration-500" href="#collections">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">arrow_downward</span>
+</a>
+</div>
+</header>
+<!-- Section 1: Signature Bouquet Collections -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="collections">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Signature Bouquet Collections</h2>
+<div class="w-16 h-px bg-primary/30 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A close-up, editorial-style photograph of a minimalist bridal bouquet held gently by hands wearing silk gloves. The bouquet features rare, creamy white peonies, delicate sweet peas, and structured calla lilies. The background is a soft, out-of-focus light gray wall. The lighting is soft and directional, highlighting the textural contrast between the smooth silk and the ruffled petals. The mood is modern, serene, and exquisitely luxurious." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsrxIKcp93_j5hWTn9AcWZMZzFSUU-w8-Qf0Me878BDalBLSU2dl3Z-zlClZDmm7B_Jarx9bMqOJMBk6QQwcL9eD5Rps1DgSTWudri4wHcxUAW7zYTczKBSMwDoWMDkWbhTos8kwqyYB-2gY4DgqB4hucGQ8Tixji2jeaE-HO3_AkL-jwY2jXVj6CyxsKscEDHRna_Vhar_JufNqGLE9HafiTae5XASv1HXk-wJUkEaZsIDay5H975')"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-background/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Minimalist</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest group-hover:text-primary transition-colors">View Collection</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal delay-100 md:-translate-y-8">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An expansive, lush romantic bridal bouquet resting on a vintage wooden table. The arrangement overflows with blush garden roses, deep burgundy ranunculus, and trailing emerald ivy. Soft, golden hour light spills across the scene, casting gentle shadows and illuminating the rich, saturated colors of the blooms against a neutral, light-toned background. The aesthetic feels timeless, abundant, and deeply romantic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFSbKctvgLlhZnfIR45an5euku7sxBzQZTS4EuIgkwWTvkEnorHcxYwIyzKSEBOB88FN69fZB3IypumEjW1L91wa4CCwoVC3Uyf2A1FYUV20gAWSAAVAimfFZobPl4FZXG6XszHit5XPS9Izv-TEVc7H5HPe8fzYqB3wOsvkv4sSHMB83rPXkzTx0wQHt61fRs50vwA0t8akz1JAEGpC6v4exFUIBFtlwr9XJgIJG4LxUwI1kcJi6R')"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-background/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Romantic</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest group-hover:text-primary transition-colors">View Collection</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden aspect-[3/4] cursor-pointer reveal delay-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An avant-garde, sculptural floral arrangement standing alone in a bright, modern gallery setting. The piece combines stark, dried architectural branches with vibrant, exotic orchids in unexpected shades of rust and mustard. The background is pristine white, emphasizing the bold, asymmetric silhouette of the design. The lighting is crisp and even, highlighting the textural interplay and artistic intention behind the composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXuws5SQZ5hF2kcIJVtX99GB4ifQnwfBryiAn44xQzTaj6nDAKt-Q2yMo6sKsCpmubA4W3yNy-4W4YzdiEehompdXkI0YWgO3FvfXYDIo_8dm_eC1vryi9wD9dDaN138q-j6EIw33wCJIn192Qt1_NQPcY_nh_rJToSJOwlU4QopQKQJNyQ6jlSoS_xc2H_DnhAKpMd-VZGBdggLoBxs4VqMI0sRRpYFzahR8GnI-7Zg317cUeNSJY')"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-background/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Avant-Garde</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest group-hover:text-primary transition-colors">View Collection</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Wedding Decoration Services -->
+<section class="py-section-padding bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Decoration Styles</h2>
+<div class="w-16 h-px bg-primary/30 mx-auto mb-6"></div>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Discover the aesthetic themes that define our bespoke environments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<div class="aspect-[4/3] bg-cover bg-center overflow-hidden group cursor-pointer" data-alt="Elegant minimalist wedding arch" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPMrGq-y1t_irA3gkWPMi6dAZ2gpdmszPGitRKhF-qrOmLDoU-c6IRyxXIIh9Z8cTJD7twSN17Fx-9dBEeoLiZOVzyHpnox9twXMqdY-ltR70yNAqWUqAuVQ1nYMc1ye6xWybflt1qzFJCiPjdduKjZdlBOIphhGQdFgoJXnZHQS94uyO809zezDOp6a0wQxxiy_xV9TEF7bBmGXVEhc3Xfd-fRAqe7yJDR7dVqvFEbiblVzloS2B0');">
+<div class="w-full h-full bg-black/10 group-hover:scale-105 transition-transform duration-1000"></div>
+</div>
+</div>
+<div class="reveal delay-100 flex flex-col justify-center">
+<h3 class="font-headline-md text-primary mb-4">Modern Minimalist</h3>
+<p class="text-on-surface-variant mb-6">Clean lines, structural arrangements, and a focus on premium, singular blooms create an atmosphere of refined restraint and contemporary elegance.</p>
+<a class="font-label-sm text-primary uppercase tracking-widest hover:text-inverse-primary transition-colors inline-flex items-center" href="#">
+                    Explore Style <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="reveal flex flex-col justify-center md:order-first">
+<h3 class="font-headline-md text-primary mb-4">Garden Romantic</h3>
+<p class="text-on-surface-variant mb-6">Lush, overflowing compositions of diverse florals and trailing greenery that evoke the untamed beauty of a secret English garden.</p>
+<a class="font-label-sm text-primary uppercase tracking-widest hover:text-inverse-primary transition-colors inline-flex items-center" href="#">
+                    Explore Style <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="reveal delay-100">
+<div class="aspect-[4/3] bg-cover bg-center overflow-hidden group cursor-pointer" data-alt="Lush romantic garden wedding floral setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaVEd9mTGvsM0HdUAtX_4kOzYKvo0MrMINt_MvZyUwFqq7raPbhwvCkuogNCOsa8k3eu_8lcYS7rAMuPSM63MsGd32m8ho2rgvP0mGEp0ghI4riPKuk1BYXxJ3DT8Qe99qnB6xWNvrm88dkwyccJszGJHJ47a1GsFI99TYrOjrQKrxoTrg0hbBLGLv4NEEVjF3tr_84cMbXP0xFtKTXCjtiREuP8SpGPo3wE5NdVOnuZbPDIRZvECo');">
+<div class="w-full h-full bg-black/10 group-hover:scale-105 transition-transform duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Our Floral Design Story -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative reveal">
+<div class="aspect-square bg-cover bg-center shadow-ambient" data-alt="Florist arranging flowers in a well-lit studio" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBFe6jdBm2NUicvkduIwRvT6JHQErVcAfji7AfYHDSM6ms3J1raqupPgCgKa5L-fdfIsiBl3c_c1R6DC3d8IWqAznD1BzV2wGdVvepfy5Y7bQ_TwxKHFnT9qhjMd4f1HMg-rgAz_azQQQ2FHAljlPexP_d0_Y3suucDzeFhizemub4f5XtLNvyiZ7TmhbmFzC_GvRjr0JJvvsR3sTntMiIf0wUOo54vIUhkU7wEaB0ChNyiHadW02K');"></div>
+<div class="absolute -bottom-8 -right-8 w-1/2 aspect-square bg-cover bg-center shadow-ambient hidden md:block border-4 border-background" data-alt="Close up of floral arrangement details" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1JVH4mosMNSpQd1DDxiby487Lf2fwgzvB5x_ogCp4vahv_Zo93jW6x9I1rmtLl4CIMSuQ2I67nIA7HISNHrP-hd2imqhr19Df-ywXv3e8_dMXz-JQMfkMQBzcfeltMRZiEqo07umGfDFofXNBf1terY77KumfxZGzFJ61SbHPFnncutSARQRhajhCkK0_lqLCCTphUfRYmKmBuFqjyZbYkq2F47aM_eQYP3REc3IrIb5FT11MkFtj');"></div>
+</div>
+<div class="reveal delay-200">
+<h2 class="font-headline-lg text-primary mb-6">Our Philosophy</h2>
+<div class="w-16 h-px bg-primary/30 mb-8"></div>
+<p class="font-body-lg text-on-surface-variant mb-6">We believe that flowers are more than decoration; they are the medium through which we tell your love story. Every stem is chosen with intention.</p>
+<p class="font-body-md text-on-surface-variant mb-8">At Floréa, our approach blends classical fine art principles with organic, free-flowing design. We collaborate closely with our couples to translate their vision into an immersive floral experience that feels both deeply personal and effortlessly luxurious.</p>
+<a class="inline-block border border-primary text-primary px-8 py-3 uppercase tracking-wider font-label-sm hover:bg-primary hover:text-white transition-colors duration-300" href="#">Read Our Story</a>
+</div>
+</div>
+</section>
+<!-- Section 4: Why Couples Choose Us -->
+<section class="py-section-padding bg-surface px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-primary mb-4">The Aurelia Difference</h2>
+<div class="w-16 h-px bg-primary/30 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="text-center reveal p-6 hover:shadow-ambient transition-shadow duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">diamond</span>
+<h3 class="font-headline-md text-lg mb-2">Premium Sourcing</h3>
+<p class="text-sm text-on-surface-variant">We source rare and exceptional blooms from trusted local growers and international markets.</p>
+</div>
+<div class="text-center reveal delay-100 p-6 hover:shadow-ambient transition-shadow duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">edit</span>
+<h3 class="font-headline-md text-lg mb-2">Bespoke Design</h3>
+<p class="text-sm text-on-surface-variant">Every arrangement is custom-designed to perfectly align with your unique aesthetic and venue.</p>
+</div>
+<div class="text-center reveal delay-200 p-6 hover:shadow-ambient transition-shadow duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">nature_people</span>
+<h3 class="font-headline-md text-lg mb-2">Sustainable Practices</h3>
+<p class="text-sm text-on-surface-variant">Committed to foam-free mechanics and environmentally conscious floristry techniques.</p>
+</div>
+<div class="text-center reveal delay-300 p-6 hover:shadow-ambient transition-shadow duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">handshake</span>
+<h3 class="font-headline-md text-lg mb-2">Flawless Execution</h3>
+<p class="text-sm text-on-surface-variant">Our dedicated team ensures seamless setup and takedown, allowing you to relax and enjoy.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Seasonal Flower Collection -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+<div>
+<h2 class="font-headline-lg text-primary mb-4">Seasonal Inspirations</h2>
+<p class="text-on-surface-variant">Highlighting the most exquisite blooms currently in season.</p>
+</div>
+<div class="mt-4 md:mt-0 flex space-x-2">
+<button class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary-container transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary-container transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="flex space-x-6 overflow-x-auto no-scrollbar pb-8 reveal delay-100">
+<!-- Item 1 -->
+<div class="min-w-[280px] md:min-w-[350px] group cursor-pointer">
+<div class="aspect-[4/5] bg-cover bg-center mb-4 overflow-hidden" data-alt="Spring Peonies" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNOFxIrtfldShXCBkXuqNXRwjK5TiwY1m1rmYa_GddxuQVPGM1d3pJRJn_JtncI3X751RI8ZCaaqm1Od_8YycdLLCQbFug7O84pxv8mDUMcEaSnT_AnKZIQngNgVr4oFVKvMLIRtRSY6w0QO8JxiN58Ku0pmp7g1W0JrVC-rNsX6wxZHg5TFZkngHN3jxFV-bMIakHmwKMbQu-w3ol5Tn02l9Jg8PewvOS43cqAmPM0joBKFR_kVAK');">
+<div class="w-full h-full bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h4 class="font-headline-md text-xl mb-1">Spring Peonies</h4>
+<p class="text-sm text-on-surface-variant">Available May - June</p>
+</div>
+<!-- Item 2 -->
+<div class="min-w-[280px] md:min-w-[350px] group cursor-pointer">
+<div class="aspect-[4/5] bg-cover bg-center mb-4 overflow-hidden" data-alt="Summer Dahlias" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAU2b5InrDWBGadK0xsQVVvb6w4uPVHXiZJVWKtlf6uVPQM_H2RQMzDWjXZzCZc9K4HGvay1qS4OXmdYmnNTZVFysK2HuawKn2IHHREnu7_b1ycRidVmOAnH-2wt6tiUiQ0CI6OaXlzCJuSV3fVFiOw8kCZqEHrkXcDMMzVogM5ADmci1fxCxL38eIrQm8NJ19I4jWOawLlC8MNvjwZ_c83_GCaV42mghS9OG9XwtQ59J3FMgWC4pwl');">
+<div class="w-full h-full bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h4 class="font-headline-md text-xl mb-1">Café au Lait Dahlias</h4>
+<p class="text-sm text-on-surface-variant">Available August - October</p>
+</div>
+<!-- Item 3 -->
+<div class="min-w-[280px] md:min-w-[350px] group cursor-pointer">
+<div class="aspect-[4/5] bg-cover bg-center mb-4 overflow-hidden" data-alt="Autumn Ranunculus" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVKi23G8Tli-yDvLCreJbTo8CEA8UeLAgsQHvhOPOcfiZuuZajNUZiMg30ynj-E2VuckRA7uQlA7ztwtJ0vj3jkK1-QWNYfPlA40ko5LwqodjR_oUPsszYymod30WaOSSR6nko-cg-gcGBvmVrCdr6V02enRrs2HufDWrM_TG4AFcwbyVmiCbSfqtpPZzGvwQ_xBJzAb-AQFhYkkaGwvhnJd40Di3GViCuRQAyx-67f_goUFVsQCqr');">
+<div class="w-full h-full bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h4 class="font-headline-md text-xl mb-1">Butterfly Ranunculus</h4>
+<p class="text-sm text-on-surface-variant">Available Feb - May</p>
+</div>
+<!-- Item 4 -->
+<div class="min-w-[280px] md:min-w-[350px] group cursor-pointer">
+<div class="aspect-[4/5] bg-cover bg-center mb-4 overflow-hidden" data-alt="Winter Hellebores" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVL8npnoHOYeNCVYNBeoh3jBj_9cdg9mLMefTwIB-n_HxwxpCcRwAFDiInb0bTuBTBdm201N-rZwC3LJGzkfQpzhkWnnwRAHWH7_qX3BlSX96DBwMohFmudYsJFz4YVXsa_21SHF9IPwMqpxLreiFJkflplCxDUMMcpZhWslXErYKq5D2T0OTs2vBTk0bcU7mSK8mrzOai4kX92DU3ril6t-X9odpfwHEY8rWRSRuqkUtNdCLYpFm1');">
+<div class="w-full h-full bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h4 class="font-headline-md text-xl mb-1">Winter Hellebores</h4>
+<p class="text-sm text-on-surface-variant">Available Dec - March</p>
+</div>
+</div>
+</section>
+<!-- Section 6: Wedding Packages -->
+<section class="py-section-padding bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-primary mb-4">Investment Offerings</h2>
+<div class="w-16 h-px bg-primary/30 mx-auto mb-6"></div>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Curated packages designed to provide a cohesive floral narrative for your entire celebration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Package 1 -->
+<div class="bg-surface p-8 border border-primary/20 reveal hover:shadow-ambient transition-all duration-300 flex flex-col">
+<h3 class="font-headline-md text-2xl text-primary mb-2">The Intimate</h3>
+<p class="text-sm text-on-surface-variant mb-6 pb-6 border-b border-primary/10">For micro-weddings and elopements.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Bridal Bouquet &amp; Groom's Boutonniere</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">2 Attendant Bouquets</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Small Ceremony Focus (e.g., ground meadow)</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Delivery &amp; Basic Setup</span></li>
+</ul>
+<a class="block w-full text-center border border-primary text-primary py-3 font-label-sm uppercase hover:bg-primary hover:text-white transition-colors" href="#">Inquire Pricing</a>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface p-8 border-2 border-primary reveal delay-100 shadow-ambient relative flex flex-col transform md:-translate-y-4">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 font-label-sm text-[10px] uppercase tracking-widest">Most Popular</div>
+<h3 class="font-headline-md text-2xl text-primary mb-2 mt-2">The Signature</h3>
+<p class="text-sm text-on-surface-variant mb-6 pb-6 border-b border-primary/10">A comprehensive floral experience.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Full Personal Flowers (Party up to 10)</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Statement Ceremony Arch or Installation</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Aisle Meadows &amp; Welcome Arrangement</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Elevated Centerpieces for up to 12 tables</span></li>
+</ul>
+<a class="block w-full text-center bg-primary text-white py-3 font-label-sm uppercase hover:bg-inverse-primary transition-colors" href="#">Inquire Pricing</a>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface p-8 border border-primary/20 reveal delay-200 hover:shadow-ambient transition-all duration-300 flex flex-col">
+<h3 class="font-headline-md text-2xl text-primary mb-2">The Bespoke</h3>
+<p class="text-sm text-on-surface-variant mb-6 pb-6 border-b border-primary/10">Unbound creativity and lavish abundance.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Unlimited Personal Flowers</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Custom Overhead Installations</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Immersive Ceremony Environments</span></li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary text-sm mr-3 mt-1">check</span><span class="text-sm text-on-surface-variant">Lush, Flowing Tablescapes</span></li>
+</ul>
+<a class="block w-full text-center border border-primary text-primary py-3 font-label-sm uppercase hover:bg-primary hover:text-white transition-colors" href="#">Inquire Pricing</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Recent Wedding Stories -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-12 reveal">
+<h2 class="font-headline-lg text-primary mb-4">Real Weddings</h2>
+<div class="w-16 h-px bg-primary/30 mx-auto mb-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative overflow-hidden aspect-[4/3] reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Elegant indoor wedding reception setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs_aevYE1AyAcM9vk48ZhUhMLmOoXS2AGmrm2X5Ez4l4krT38mhQpJx-RD15JvxAAT7egnHqddl5hlPSujgkGNBG6Q_Ms-Wr3dzadmx-kacj4E9YAVj4E1PfvD8Qy9sdviFZyhyok0myTH_06PgpyA1Nzq2ajN1rdu0uBSrKhidnhltOWaHdRJKWK8GhPIIjxUQigeyR3EFZRtdbqje6CQ4wlDSPremhADGCXwid4SLkXkXSF2NKbQ');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white mb-2">Eleanor &amp; James</h3>
+<p class="font-label-sm text-white/80 uppercase tracking-widest mb-4">The Grand Estate | Modern Classic</p>
+<a class="text-white hover:text-primary-fixed flex items-center font-label-sm transition-colors w-max" href="#">
+                    View Gallery <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group relative overflow-hidden aspect-[4/3] reveal delay-100">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Outdoor garden wedding ceremony setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDECbxe3RQ4G7PT3NkFUjS4Ru4o2HZhBmWeefd3Ux3kJhQrDr0BruW85twRL1xv9m6JWfxjn6ZTgtCeIY9F6BLQJ2FDSQlF9gHxEF78ZL_-MQqmTTHKt5SQNTgBl1riR3rzpfaA3mqbgAOce1KC-QjIHVKyd7AKvs22LtNEgqtNJNgyXrd6JfdwYBY5gimOSB7AF3G6JgNwRmkk1BifezROJzudh_wjSWbWKIvJYDrI0CrMbAZXLDQL');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white mb-2">Sophia &amp; Liam</h3>
+<p class="font-label-sm text-white/80 uppercase tracking-widest mb-4">Botanical Gardens | Garden Romantic</p>
+<a class="text-white hover:text-primary-fixed flex items-center font-label-sm transition-colors w-max" href="#">
+                    View Gallery <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12 reveal">
+<a class="inline-block border-b border-primary text-primary pb-1 font-label-sm uppercase tracking-widest hover:text-on-surface transition-colors" href="#">View All Stories</a>
+</div>
+</section>
+<!-- Section 8: Customer Testimonials -->
+<section class="py-section-padding bg-surface-container-high px-margin-mobile md:px-margin-desktop flex items-center justify-center">
+<div class="max-w-4xl mx-auto text-center reveal">
+<span class="material-symbols-outlined text-4xl text-primary/40 mb-6">format_quote</span>
+<h2 class="font-headline-lg text-primary mb-8 leading-tight">
+            "Floréa transformed our venue into something out of a dream. Their attention to detail, the quality of the blooms, and the sheer artistry of their designs left us and our guests speechless."
+        </h2>
+<div class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">— Olivia &amp; Thomas</div>
+<p class="text-sm text-on-surface-variant/70 italic">Married September 2023</p>
+<div class="flex justify-center space-x-2 mt-8">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+</div>
+</div>
+</section>
+<!-- Section 9: Consultation CTA -->
+<section class="relative py-[160px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAESXC4SMK2VFhKELf6SmkJiZU4ZJ_yjgDjLZlA34N84BxSn99_luzZltUUTWlrxFH8jRJTwdR4A-mabLU017uZUXg4EEhejxfnPeK_XFEfxSokTLiKVZ3pt3hFfiA9-Gi2cM32Zb8FfaVNBo6tsRe2vLPwU4yKAjw0Cp3FHqOYwTQIdz9NTvJMdKOa1kdk7WuDLSyiR8MQ_K1LDLKm9Z-76QiHw5M_Lzt76exSzpwLgeSYdJchZnIL');"></div>
+<div class="absolute inset-0 bg-background/80 mix-blend-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-2xl mx-auto reveal bg-surface/90 backdrop-blur-sm p-12 border border-primary/20 shadow-ambient">
+<h2 class="font-headline-lg text-primary mb-4">Let's Create Together</h2>
+<p class="text-on-surface-variant mb-8 font-body-lg">Begin the journey of designing your bespoke floral narrative. We are currently accepting commissions for the 2024 and 2025 wedding seasons.</p>
+<a class="inline-block bg-primary text-white px-10 py-4 uppercase tracking-wider font-label-sm hover:bg-inverse-primary transition-colors duration-300" href="#">Request a Consultation</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="relative w-full overflow-hidden mt-20">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAESXC4SMK2VFhKELf6SmkJiZU4ZJ_yjgDjLZlA34N84BxSn99_luzZltUUTWlrxFH8jRJTwdR4A-mabLU017uZUXg4EEhejxfnPeK_XFEfxSokTLiKVZ3pt3hFfiA9-Gi2cM32Zb8FfaVNBo6tsRe2vLPwU4yKAjw0Cp3FHqOYwTQIdz9NTvJMdKOa1kdk7WuDLSyiR8MQ_K1LDLKm9Z-76QiHw5M_Lzt76exSzpwLgeSYdJchZnIL');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b2013] via-[#0b2013]/95 to-[#0b2013]/70 mix-blend-multiply"></div>
+        <!-- Extra dark gradient for readability -->
+        <div class="absolute inset-0 bg-[#0b2013]/80"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <!-- Brand Section -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                <a href="index.html" class="font-display-lg text-[48px] text-[#d4af37] mb-6 hover:opacity-80 transition-opacity leading-none">Floréa</a>
+                <p class="font-body-sm text-[#b4cdb8] max-w-xs font-light leading-relaxed">
+                    A boutique floral design studio specializing in editorial, romantically undone aesthetics for weddings of distinction.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="md:col-span-2 md:col-start-6 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Navigation</h4>
+                <div class="flex flex-col space-y-5">
+                    <a href="index.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Home</a>
+                    <a href="services.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Services</a>
+                    <a href="gallery.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Gallery</a>
+                    <a href="blog.html" class="font-label-sm text-[12px] text-[#b4cdb8] hover:text-[#d4af37] hover:translate-x-2 transition-all duration-300 uppercase tracking-widest w-fit">Journal</a>
+                </div>
+            </div>
+            
+            <!-- Studio Details -->
+            <div class="md:col-span-3 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">The Studio</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light">
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Location</span>
+                        128 Floral Avenue, Suite 4<br/>
+                        Botanica District, NY 10012
+                    </p>
+                    <p>
+                        <span class="block text-[#fbf9f4] font-medium mb-1 text-sm">Hours</span>
+                        Tuesday – Saturday<br/>
+                        10:00 AM – 6:00 PM<br/>
+                        <span class="text-[11px] italic text-[#d4af37] mt-1 block">By appointment only</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Contact & Social -->
+            <div class="md:col-span-2 flex flex-col">
+                <h4 class="font-label-sm text-[11px] text-[#fbf9f4] uppercase tracking-[0.25em] mb-8">Connect</h4>
+                <div class="font-body-md text-[#b4cdb8] space-y-5 font-light mb-8">
+                    <p>
+                        <a href="mailto:hello@aureliafloral.com" class="hover:text-[#d4af37] transition-colors border-b border-[#b4cdb8]/30 pb-1">hello@aureliafloral.com</a>
+                    </p>
+                    <p>
+                        <a href="tel:+12125550198" class="hover:text-[#d4af37] transition-colors">212.555.0198</a>
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0b2013] transition-all duration-300" aria-label="Pinterest">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.166.329.332.682.479 1.05-4.092 1.439-8.563 2.15-8.98 2.22-.057-.597-.09-1.201-.09-1.815a8.59 8.59 0 01.077-1.025zM12 20.518c-2.22 0-4.22-.857-5.733-2.261.428-.088 4.397-.935 8.016-2.613a26.046 26.046 0 01-1.353 3.966c-.302.046-.61.083-.92.115a8.487 8.487 0 01-1.357.108zm2.63-1.745c.08-.226.155-.453.226-.684.81-2.628 1.107-4.887 1.144-5.201 3.232.88 5.485 2.122 5.568 2.17A8.528 8.528 0 0114.63 18.773z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-[#d4af37]/20 pt-8 mt-8">
+            <p class="font-label-sm text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase mb-4 md:mb-0">
+                &copy; 2026 Floréa. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] text-[#b4cdb8]/60 tracking-[0.2em] uppercase font-label-sm">
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+                <span>Designed with Elegance</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Reveal Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+        });
+    </script>
+<script src="theme-toggles.js"></script>
+</body></html>
